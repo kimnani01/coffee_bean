@@ -20,6 +20,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
+    <div class="top_btn"><img src="./images/btn_top.png" alt="위로가기"></div>
     <header>
         <div class="lnb">
             <a href="#">로그인</a>
@@ -33,7 +34,7 @@
             <nav>
                 <ul class="gnb">
                     <li class="buy"><a href="#">BUY ONLINE</a>
-                        <div class="bg">
+                        <div class="bg"><!-- 네비 마우스 올렸을 때 -->
                             <div class="title"><p>BUY ONLINE</p></div>
                             <ul class="sub">
                                 <li><a href="#">View All</a></li>
@@ -88,7 +89,7 @@
                         </div>
                     </li>
                     <li><a href="#">MEMBER'S CLUB</a>
-                        <div class="bg">
+                        <div class="bg"><!-- 네비 마우스 올렸을 때 -->
                             <div class="title"><p>MEMBERS'S CLUB</p></div>
                             <ul class="sub">
                                 <li><a href="#">커피빈 멤버스 클럽</a>
@@ -110,7 +111,7 @@
                         </div>
                     </li>
                     <li><a href="#">MENU</a>
-                        <div class="bg">
+                        <div class="bg"><!-- 네비 마우스 올렸을 때 -->
                             <div class="title"><p>MENU</p></div>
                             <ul class="sub">
                                 <li><a href="#">음료</a>
@@ -139,15 +140,15 @@
                                 </li>
                                 <li><a href="#">카드</a>
                                     <ul>
-                                        <a href="#">e-Gift 카드</a>
-                                        <a href="#">실물카드</a>
+                                        <li><a href="#">e-Gift 카드</a></li>
+                                        <li><a href="#">실물카드</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </li>
                     <li><a href="#">STORE & 서비스</a>
-                        <div class="bg">
+                        <div class="bg"><!-- 네비 마우스 올렸을 때 -->
                             <div class="title"><p>STORE & 서비스</p></div>
                             <ul class="sub">
                                 <li><a href="#">케이터링 서비스</a></li>
@@ -157,7 +158,7 @@
                         </div>
                     </li>
                     <li><a href="#">THE COFFEE BEAN</a>
-                        <div class="bg">
+                        <div class="bg"><!-- 네비 마우스 올렸을 때 -->
                             <div class="title"><p>THE COFFEE BEAN</p></div>
                             <ul class="sub">
                                 <li><a href="#">커피빈 코리아</a>
@@ -196,7 +197,7 @@
             </nav>
             <div class="search_wrap">
                 <button type="button"><img src="./images/icon_search.png" alt="검색"></button>
-                <div class="bg">
+                <div class="bg"><!-- 검색버튼 클릭시 -->
                     <input type="text" name="search" placeholder="검색어를 입력하세요">
                     <button type="button"><img src="./images/ico_search.png" alt="검색"></button>
                 </div>
@@ -204,17 +205,20 @@
         </div>
     </header>
     <main>
+        <!-- 비주얼 이미지 -->
         <div class="visual_wrap">
             <div class="swiper visual"> 
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide slide1"></div>
-                    <div class="swiper-slide slide2"></div>
-                    <div class="swiper-slide slide3"></div>
+                    <div class="swiper-slide slide1"><span>커피빈의 완벽한 한 잔</span></div>
+                    <div class="swiper-slide slide2"><span>블랙 다이몬</span></div>
                 </div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"><img src="./images/btn_prev.png" alt="이전"></div>
+                <div class="swiper-button-next"><img src="./images/btn_next.png" alt="다음"></div>
             </div>
         </div>
+        <!-- 광고배너 -->
+        <div class="banner"><img src="./images/banner_001.jpg" alt="서울 MD 출시 기념 프로모션"></div>
+        <!-- MD's Pick -->
         <div class="pick">
             <h2>MD's Pick</h2>
             <div class="swiper pick">
@@ -226,8 +230,8 @@
                     <div class="txt_box">
                         <p class="name">(56%할인)아메리카노 컵커피 300ml 10입(박스)</p>
                         <p class="date">2024-07-21까지/(제조일로부터 3개월)</p>
-                        <p class="cost"><span>20000</span>원</p>
-                        <p class="discount_price"><span>9000</span>원</p>
+                        <p class="cost"><del>20,000원</del></p>
+                        <p class="discount_price">9,000원</p>
                     </div>
                 </div>
                 <div class="swiper-slide slide2">
@@ -238,8 +242,8 @@
                     <div class="txt_box">
                         <p class="name">(58%할인)헤이즐넛라떼 컵커피 300ml 10입(박스)</p>
                         <p class="date">유통기한 상온 2024-07-10까지/(총 유통기한 제조일로부터 3개월)</p>
-                        <p class="cost"><span>21000</span>원</p>
-                        <p class="discount_price"><span>8900</span>원</p>
+                        <p class="cost"><del>21,000원</del></p>
+                        <p class="discount_price">8,900원</p>
                     </div>
                 </div>
                 <div class="swiper-slide slide3">
@@ -250,8 +254,8 @@
                     <div class="txt_box">
                         <p class="name">(67%할인)커피빈 바닐라 라떼 2T</p>
                         <p class="date">2024-10-07까지</p>
-                        <p class="cost"><span>1500</span>원</p>
-                        <p class="discount_price"><span>500</span>원</p>
+                        <p class="cost"><del>1,500원</del></p>
+                        <p class="discount_price">500원</p>
                     </div>
                     
                 </div>
@@ -263,8 +267,8 @@
                     <div class="txt_box">
                         <p class="name">(60%할인)커피빈 카페 라떼 10T</p>
                         <p class="date">2024-10-02까지</p>
-                        <p class="cost"><span>5000</span>원</p>
-                        <p class="discount_price"><span>2000</span>원</p>
+                        <p class="cost"><del>5,000원</del></p>
+                        <p class="discount_price">2,000원</p>
                     </div>
                     
                 </div>
@@ -276,8 +280,8 @@
                     <div class="txt_box">
                         <p class="name">(41%할인)커피빈 디카페인 아메리카노 파우치(10개입)</p>
                         <p class="date">2024-12-16까지</p>
-                        <p class="cost"><span>15000</span>원</p>
-                        <p class="discount_price"><span>8900</span>원</p>
+                        <p class="cost"><del>15,000원</del></p>
+                        <p class="discount_price">8,900원</p>
                     </div>
                     
                 </div>
@@ -289,8 +293,8 @@
                     <div class="txt_box">
                         <p class="name">커피빈 카페라떼 파우치(10개입)</p>
                         <p class="date">2024-11-02까지</p>
-                        <p class="cost"><span>16000</span>원</p>
-                        <p class="discount_price"><span>11900</span>원</p>
+                        <p class="cost"><del>16,000원</del></p>
+                        <p class="discount_price">11,900원</p>
                     </div>
                 </div>
                 <div class="swiper-slide slide7">
@@ -301,8 +305,8 @@
                     <div class="txt_box">
                         <p class="name">(64%할인)비건 피넛버터 프로틴바 22</p>
                         <p class="date">2024-09-10까지/(제조일로부터 3개월)</p>
-                        <p class="cost"><span>2500</span>원</p>
-                        <p class="discount_price"><span>900</span>원</p>
+                        <p class="cost"><del>2,500원</del></p>
+                        <p class="discount_price">900원</p>
                     </div>
                 </div>
                 <div class="swiper-slide slide8">
@@ -313,8 +317,8 @@
                     <div class="txt_box">
                         <p class="name">(25%할인)커피빈 실속선물세트A호</p>
                         <p class="date">2024-12-18까지</p>
-                        <p class="cost"><span>18500</span>원</p>
-                        <p class="discount_price"><span>13900</span>원</p>
+                        <p class="cost"><del>18,500원</del></p>
+                        <p class="discount_price">13,900원</p>
                     </div>
                 </div>
                 <div class="swiper-slide slide9">
@@ -326,7 +330,7 @@
                         <p class="name">커피빈 슬림 워터 보틀</p>
                         <p class="date"></p>
                         <p class="cost"></p>
-                        <p class="discount_price"><span>8900</span>원</p>
+                        <p class="discount_price">8,900원</p>
                     </div>
                 </div>
             </div>
@@ -334,22 +338,23 @@
                 <div class="pause"><img src="./images/btn_pause.png" alt="일시정지"></div>
                 <div class="swiper-pagination"></div>
             </div>
+            <!-- 팝업 페이지 -->
             <div class="popup_bg">
                 <div class="bg">
                     <div class="popup">
                         <div class="swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide slide1"></div>
-                                <div class="swiper-slide slide"></div>
+                                <div class="swiper-slide slide1"><span>상세이미지1</span></div>
+                                <div class="swiper-slide slide2"><span>상세이미지2</span></div>
                             </div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"><img src="./images/btn_prev.png" alt="이전"></div>
+                            <div class="swiper-button-next"><img src="./images/btn_next.png" alt="다음"></div>
                         </div>
                         <div class="info">
                             <div class="top">
                                 <h2>(58%할인)헤이즐넛라떼 컵커피 300ml 10입(박스)</h2>
                                 <p>유통기한 상온 2024-07-10까지/(총 유통기한 제조일로부터 3개월)</p>
-                                <p><span>21000원</span><em>8900원</em></p>
+                                <p><del>21,000원</del><em>8,900원</em></p>
                             </div>
                             <div class="btm">
                                 <dl>
@@ -364,7 +369,7 @@
                                     <dt>주문수량</dt>
                                     <dd>
                                         <button type="button" id="plus">+</button>
-                                        <input type="text" name="count" id="count">
+                                        <input type="num" name="count" id="count">
                                         <button type="button" id="minus">-</button>
                                     </dd>
                                 </dl>
@@ -379,10 +384,11 @@
                 </div>
             </div>
         </div>
-        <div class="new">
+        <!-- What's new -->
+        <div class="new_wrap">
             <h2>What's new</h2>
             <div class="swiper">
-                <div class="swiper wrapper">
+                <div class="swiper-wrapper">
                     <div class="swiper-slide slide1">
                         <p><img src="./images/new_001.jpg" alt=""></p>
                         <p>2024 05 먹물치즈 큐브 식빵 & 그릴드 비프치즈 샌드위치</p>
@@ -434,6 +440,7 @@
                 </div>
             </div>
         </div>
+        <!-- 인스타그램 -->
         <div class="insta_wrap">
             <h2>#커피빈코리아 #커피빈 #완벽한한잔</h2>
             <div class="thumbnail">
@@ -450,7 +457,7 @@
                 <a href="#"><img src="./images/insta_011.jpg" alt=""></a>
                 <a href="#"><img src="./images/insta_012.jpg" alt=""></a>
             </div>
-            <p><button type="button" id="insta">OUR INSTAGRAM - @COFFEEBEAN_KR</button></p>
+            <p><a type="button" id="insta">OUR INSTAGRAM - @COFFEEBEAN_KR</a></p>
         </div>
     </main>
     <footer>
@@ -510,10 +517,10 @@
                 </div>
             </div>
             <div class="sns">
-                <img src="images/icon_facebook.png" alt="페이스북">
-                <img src="images/icon_instagram.png" alt="인스타그램">
-                <img src="images/icon_blog.png" alt="블로그">
-                <img src="images/icon_twitter.png" alt="트위터">
+                <a href="#"><img src="images/icon_facebook.png" alt="페이스북"></a>
+                <a href="#"><img src="images/icon_instagram.png" alt="인스타그램"></a>
+                <a href="#"><img src="images/icon_blog.png" alt="블로그"></a>
+                <a href="#"><img src="images/icon_twitter.png" alt="트위터"></a>
             </div>
         </div>
     </footer>
