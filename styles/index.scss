@@ -1,0 +1,370 @@
+@import 'common';
+.top_btn {
+    @include pst_fixed; right: 30px; bottom: 80px;
+    a{img {}}}
+header {
+    @include pst_fixed; left: 0; top: 0;
+    width: 100%;
+    .lnb_bg {
+        background-color: $bg2; height: 38px;
+        .lnb {
+            @include center;
+            @include flex; justify-content: right; 
+            position: relative;
+            a {
+                font-family: nanum; font-size: $font14;
+                margin-right: 20px; line-height: 38px;
+            }
+            a:first-child {margin-right: 40px;}
+            a:first-child::after {
+                content:''; background-color: $color1; display: inline-block;
+                width: 1px; height: 38px;
+                position: absolute; right: 357px;
+            }
+        }
+    }
+    .inner_header_bg {
+        background-color: $bg1; position: relative;
+        .inner_header {
+            height: 100px; @include center;
+            @include flex;
+            h1 {a {img {}}}
+            nav{
+                .gnb {
+                    @include flex;
+                    > li {
+                        > a {
+                            font-size: $font14; font-family: Arial, nanum;
+                            letter-spacing: 0.4px; font-weight: 700;
+                            margin-right: 60px;
+                            
+                        }
+                        .bg {/* 마우스 올렸을 때 나타나는 메뉴 */
+                            background-color: $bg2;
+                            @include pst_ab; width: 100%; padding: 30px 0;
+                            @include flex; justify-content: center;
+                            align-items: start;
+                            display: none;
+                            .title {
+                                width: 250px;
+                                p {font-weight: 700; font-size: 1.25rem;}
+                            }
+                            .sub {
+                                display: grid; grid-template-columns: repeat(5, 1fr);
+                                row-gap: 50px;
+                                width: 950px;
+                                > li {
+                                    width: 186px;
+                                    a {
+                                        font-family: nanum; font-weight: 700;
+                                        font-size: 0.938rem; 
+                                    }
+                                    .depth1 {
+                                        margin-top: 20px;
+                                        li {
+                                            margin-bottom: 10px;
+                                            a{
+                                                font-family: nanum; font-size: $font13;
+                                                font-weight: 400;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    > li:last-child {
+                        p {
+                            margin-bottom: 20px;
+                        }
+                    }
+                    > li:last-child > a {margin: 0;}
+                }
+            }
+            .search_wrap {
+                > button {
+                    @include btn;
+                    img{}
+                }
+                .bg{/* 검색버튼 눌렀을 때 나오는 검색바 */
+                    @include pst_ab; background: $bg2;
+                    width: 100%; height: 80px;
+                    @include flex; justify-content: center;
+                    display: none;
+                    input {
+                        border: 0;
+                        border-bottom: 1px solid $color1;
+                        background: none; text-align: center;
+                        width: 1160px; margin-right: 20px; line-height: 30px
+                    }
+                    button {@include btn;}
+                }
+            }
+        }
+    }
+}
+main {
+    margin-top: 138px;
+    .visual_wrap {/* 비주얼 이미지 */
+        .visual {
+            width: 100%; position: relative;
+            .swiper-wrapper {
+                .swiper-slide {
+                    a {
+                        background-size: cover;
+                        background-position: center;
+                        height: 700px; display: block;
+                        span {display: none;}
+                    }
+                }
+                .slide1 {
+                    a {background-image: url(../images/visual_001.jpg);}
+                }
+                .slide2 {
+                    a {background-image: url(../images/visual_002.jpg);}
+                }
+            }
+            .swiper-button {
+                width: 1200px;
+                height: 50px;
+                @include pst_ab; z-index: 990;
+                top:50%; left: 50%;
+                transform: translate(-50%, -50%);/* absolute 기준점 맞추기 */
+                .swiper-button-prev {img{}}
+                .swiper-button-prev::after {display: none;}
+                .swiper-button-next {img{}}
+                .swiper-button-next::after {display: none;}
+            }
+        }
+    }
+    .banner {/* 광고배너 */
+        a{
+            width: 100%; height:400px; display: block;
+            @include flex; justify-content: center;
+            img {}
+        }   
+    }
+    .pick_wrap {/* MD pick */
+        @include center; text-align: center;
+        padding: $p55; 
+        h2 {
+            @include title;
+        }
+        .pick {
+            .swiper-wrapper {
+                @include flex;
+                margin: $m35;
+                .swiper-slide {
+                    .photo {
+                        margin-bottom: 25px;
+                        img {width: 100%;}
+                        .quickview {display: none;}
+                    }
+                    .txt_box {
+                        height: 150px;
+                        .name {
+                            font-family: archer, nanum; font-size: $font18;
+                            line-height: 22px; @include dot;
+                        }
+                        .date {
+                            font-family: Arial, nanum; font-size: 0.875rem;
+                            margin: 15px 0; @include dot
+                        }
+                        .cost {
+                            font-family: nanum; font-size: $font13;
+                            margin-bottom: 5px;
+                        }
+                        .total_price {
+                            font-family: nanum; font-size: 0.875rem;
+                            color: $color2;
+                        }
+                    }
+                }
+                .swiper-slide:last-child {margin: 0;}
+            }
+        }
+        .page_btn {/* 페이지버튼 */
+            @include flex;
+            justify-content: center;
+            width: max-content;
+            position: relative;
+            margin: 0 auto;
+            .pause {
+                width: max-content;
+                margin-right: 30px;
+                img {}
+            }
+            .pause::after {/* 구분선 */
+                content: ''; display: inline-block;
+                width: 1px; height: 13px;
+                background-color: $color1;
+                margin: 0 15px;
+            }
+            .swiper-pagination {
+                width: max-content; height: 15px;
+                top: 0; left: 38px;
+                .swiper-pagination-bullet {
+                    background-color: $bg2;
+                    opacity: 1;
+                    width: 15px; height: 15px;
+                }
+                .swiper-pagination-bullet-active {background-color: $bg3;}
+            }
+        }
+        .popup_bg {/* 팝업페이지 */
+            display: none;}
+    }
+    .new_wrap {/* 신상 */
+        @include center; text-align: center;
+        padding: $p55;
+        h2 {@include title;}
+        .new_slide {
+            margin: $m35;
+            .swiper-wrapper {
+                @include flex;
+                .swiper-slide {
+                    height: 580px;
+                    p:first-child {
+                        margin-bottom: 25px;
+                        img{}
+                    }
+                    p:last-child {
+                        padding: 0 40px; height: 90px; color: $color2;
+                        font-family: archer, nanum; font-size: $font18;
+                    }
+                }
+            }
+            .page_btn {/* 페이지 버튼 */
+                @include flex;
+                justify-content: center;
+                width: max-content;
+                position: relative;
+                margin: 0 auto;
+                .pause {
+                    width: max-content;
+                    margin-right: 30px;
+                    img {}
+                }
+                .pause::after {/* 구분선 */
+                    content: ''; display: inline-block;
+                    width: 1px; height: 13px;
+                    background-color: $color1;
+                    margin: 0 15px;
+                }
+                .swiper-pagination {
+                    width: max-content; height: 15px;
+                    top: 0; left: 38px;
+                    .swiper-pagination-bullet {
+                        background-color: $bg2;
+                        opacity: 1;
+                        width: 15px; height: 15px;
+                    }
+                    .swiper-pagination-bullet-active {background-color: $bg3;}
+                }
+            }
+        }
+    }
+    .insta_wrap {
+        background-color: $bg4;
+        text-align: center;
+        padding: $p55;
+        h2 {
+            @include title;
+            color: $color3;
+        }
+        .thumbnail {
+            padding: 30px 0;
+            @include center;
+            @include flex; 
+            justify-content: center; flex-flow: row wrap;
+            a {width: 200px; height: 200px;
+                img {width: 100%;}
+            }
+        }
+        p {
+            #insta {
+                color: $color3;
+                background-color: $bg3;
+                font-family: archer, nanum; font-size: 0.875rem;
+                letter-spacing: 1px; display: inline-block;
+                width: 400px; line-height: 40px;
+            }
+        }
+    }
+}
+footer {
+    background-color: $bg5;
+    padding: $p55;
+    .menu {
+        @include center;
+        margin-bottom: 55px;
+        dl {
+            @include flex;
+            justify-content: start;
+            margin-bottom: 30px;
+            dt {
+                font-family: archer, nanum; font-size: $font18;
+                width: 135px; color: $color2;
+                margin-right: 50px;
+            }
+            dd {
+                a {
+                    font-family: nanum; font-size: $font13;
+                    color: #4b2616;
+                    em {font-family: nanum_b;}
+                }
+            }
+            dd::after {
+                @include page_line; height: 10px; 
+                background-color: #4b2616;
+                margin: 0 30px;
+            }
+            dd:last-child::after {display: none;}
+        }
+        dl:last-child {margin: 0;}
+    }
+    .inner_footer {
+        @include center;
+        padding-top: 30px;
+        border-top: 1px solid #4b2616;
+        @include flex; align-items: start;
+        .left{
+            .law {
+                margin-bottom: 25px;
+                a {
+                    font-family: nanum; font-size: $font13;
+                    color: $color5;
+                    em{color: $color2;}
+                }
+                a::after {
+                    @include page_line; height: 10px; 
+                    background-color: #4b2616;
+                    margin: 0 10px;
+                }
+                a:last-child::after {display: none;}
+            }
+            .address {
+                span {
+                    font-family: nanum; font-size: $font13;
+                    line-height: 1.8;
+                    color: $color5;
+                }
+                span::after {
+                    @include page_line; height: 10px; 
+                    background-color: $color5;
+                    margin: 0 10px;
+                }
+                span:nth-of-type(3)::after,
+                span:nth-of-type(6)::after,
+                span:last-child::after {display: none;}
+            }
+        }
+        .sns {
+            a {
+                margin-left: 15px;
+                img{}
+            }
+            a:first-child {margin: 0;}
+        }
+    }
+}

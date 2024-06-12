@@ -1,0 +1,46 @@
+$font13: 0.813rem;
+$font14: 0.875rem;
+$font18: 1.125rem;
+$bg1: #fff;
+$bg2: #EEEEEE;
+$bg3: #F38200;
+$bg4: #7C51A1;
+$bg5: #e2e2e2;
+$color1: #E4E4E4;
+$color2: #CF661A;
+$color3: #fff;
+$color4: #4b2616;
+$color5: #5f4d3f;
+$p55: 55px 0;
+$m35: 35px 0;
+@mixin pst_fixed {
+    position:fixed; z-index: 999;
+}
+@mixin flex {
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin pst_ab {
+    position: absolute; top:100px; left: 0; 
+}
+@mixin btn {
+    background: none; border: 0;
+}
+@mixin center {
+    width: 1200px; margin: 0 auto;
+}
+@mixin title {
+    font-family: archer; font-size: 1.5rem;
+    color: $color2;
+}
+@mixin dot {
+    overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap;
+}
+@mixin page_line {
+    content: ''; display: inline-block;
+    width: 1px; height: 13px;
+    background-color: $color1;
+    margin: 0 15px;
+}
