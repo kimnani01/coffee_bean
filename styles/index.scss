@@ -162,9 +162,11 @@ main {
                     }
                     .txt_box {
                         height: 150px;
+                        color: $color6; 
                         .name {
                             font-family: archer, nanum; font-size: $font18;
                             line-height: 22px; @include dot;
+                            
                         }
                         .date {
                             font-family: Arial, nanum; font-size: 0.875rem;

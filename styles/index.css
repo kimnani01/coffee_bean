@@ -235,6 +235,7 @@ main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo .quickview {
 }
 main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box {
   height: 150px;
+  color: #333333;
 }
 main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box .name {
   font-family: archer, nanum;

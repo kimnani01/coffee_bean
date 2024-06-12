@@ -13,6 +13,10 @@
     font-family: archer;
     src: url(../fonts/Archer-Semibold-Pro.ttf);
 }
+@font-face {
+    font-family: archer_b;
+    src: url(../fonts/Archer-Bold-Pro.ttf);
+}
 
 * {box-sizing: border-box;}
 body,html,
