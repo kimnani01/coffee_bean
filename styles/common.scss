@@ -15,11 +15,10 @@ $color4: #4b2616;
 $color5: #5f4d3f;
 $color6: #333333;
 $color7: #ccc;
+$color8: #4b2616;
+$color9: #604f48;
 $p55: 55px 0;
 $m35: 35px 0;
-@mixin pst_fixed {
-    position:fixed; z-index: 999;
-}
 @mixin flex {
     display: flex; flex-flow: row nowrap;
     justify-content: space-between;

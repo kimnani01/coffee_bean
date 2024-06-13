@@ -1,9 +1,10 @@
 @import 'common';
 .top_btn {
-    @include pst_fixed; right: 30px; bottom: 80px;
+    position: fixed; z-index: 990; right: 30px; bottom: 80px; 
+    display: none; 
     a{img {}}}
 header {
-    @include pst_fixed; left: 0; top: 0;
+    position: fixed; z-index: 990; left: 0; top: 0;
     width: 100%;
     .lnb_bg {
         background-color: $bg2; height: 38px;
@@ -37,7 +38,8 @@ header {
                             font-size: $font14; font-family: Arial, nanum;
                             letter-spacing: 0.4px; font-weight: 700;
                             margin-right: 60px;
-                            
+                            transition: all 0.2s ease;
+                            line-height: 100px;
                         }
                         .bg {/* 마우스 올렸을 때 나타나는 메뉴 */
                             background-color: $bg2;
@@ -45,9 +47,10 @@ header {
                             @include flex; justify-content: center;
                             align-items: start;
                             display: none;
+                            transition: opacity 0.3s ease;
                             .title {
                                 width: 250px;
-                                p {font-weight: 700; font-size: 1.25rem;}
+                                p {font-weight: 700; font-size: 1.25rem; color: $color2;}
                             }
                             .sub {
                                 display: grid; grid-template-columns: repeat(5, 1fr);
@@ -57,7 +60,7 @@ header {
                                     width: 186px;
                                     a {
                                         font-family: nanum; font-weight: 700;
-                                        font-size: 0.938rem; 
+                                        font-size: 0.938rem; color: $color8
                                     }
                                     .depth1 {
                                         margin-top: 20px;
@@ -65,7 +68,7 @@ header {
                                             margin-bottom: 10px;
                                             a{
                                                 font-family: nanum; font-size: $font13;
-                                                font-weight: 400;
+                                                font-weight: 400; color: $color9;
                                             }
                                         }
                                     }
@@ -79,12 +82,22 @@ header {
                         }
                     }
                     > li:last-child > a {margin: 0;}
+                    > li:hover > a {color: $color2;}
                 }
             }
             .search_wrap {
-                > button {
+                #search_btn {
                     @include btn;
-                    img{}
+                    background-image: url(../images/icon_search.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    width: 20px; height: 20px;
+                }
+                .search_on {/* 검색버튼 눌렀을 때 창닫기 버튼*/
+                    background-image: url(../images/icon_search_close.png)!important;
+                }
+                .search_display {/* 검색버튼 눌렀을 때 검색창 나오기 */
+                    display: flex!important;
                 }
                 .bg{/* 검색버튼 눌렀을 때 나오는 검색바 */
                     @include pst_ab; background: $bg2;
@@ -95,9 +108,10 @@ header {
                         border: 0;
                         border-bottom: 1px solid $color1;
                         background: none; text-align: center;
-                        width: 1160px; margin-right: 20px; line-height: 30px
+                        width: 1160px; margin-right: 20px; line-height: 30px;
+                        font-family: nanum;
                     }
-                    button {@include btn;}
+                    #in_search_btn {@include btn;}
                 }
             }
         }
@@ -155,42 +169,46 @@ main {
                 @include flex;
                 margin: $m35;
                 .swiper-slide {
-                    .photo {
-                        margin-bottom: 25px;
-                        position: relative;
-                        img {width: 100%;}
-                        .quickview {/* 팝업시작 버튼 */
-                            @include pst_ab; top: 200px; left: 50%;
-                            transform: translateX(-50%);
-                            width: 200px; height: 40px;
-                            background-color: $bg3; color: $color3;
-                            border: 0; font-family: archer_b; font-size: $font14;
-                            letter-spacing: 0.8px;
-                            display: none;
+                    position: relative;
+                    a {
+                        .photo {
+                            margin-bottom: 25px;
+                            img {width: 100%; transition: all 0.5s ease;}
+                            img:hover {opacity: 0.8;}
+                        }
+                        .txt_box {
+                            height: 150px;
+                            color: $color6; 
+                            .name {
+                                font-family: archer_b, nanum; font-size: $font18;
+                                font-weight: 700;
+                                line-height: 22px; @include dot;
+                                
+                            }
+                            .date {
+                                font-family: Arial, nanum; font-size: 0.875rem;
+                                margin: 15px 0; @include dot
+                            }
+                            .cost {
+                                font-family: nanum; font-size: $font13;
+                                margin-bottom: 5px;
+                            }
+                            .total_price {
+                                font-family: nanum; font-size: 0.875rem;
+                                color: $color2;
+                            }
                         }
                     }
-                    .txt_box {
-                        height: 150px;
-                        color: $color6; 
-                        .name {
-                            font-family: archer_b, nanum; font-size: $font18;
-                            font-weight: 700;
-                            line-height: 22px; @include dot;
-                            
-                        }
-                        .date {
-                            font-family: Arial, nanum; font-size: 0.875rem;
-                            margin: 15px 0; @include dot
-                        }
-                        .cost {
-                            font-family: nanum; font-size: $font13;
-                            margin-bottom: 5px;
-                        }
-                        .total_price {
-                            font-family: nanum; font-size: 0.875rem;
-                            color: $color2;
-                        }
+                    .quickview {/* 팝업시작 버튼 */
+                        @include pst_ab; top: 200px; left: 50%;
+                        transform: translateX(-50%);
+                        width: 200px; height: 40px;
+                        background-color: $bg3; color: $color3;
+                        border: 0; font-family: archer_b; font-size: $font14;
+                        letter-spacing: 0.8px;
+                        display: none;
                     }
+                    // a:hover + .quickview {display: block;}
                 }
                 .swiper-slide:last-child {margin: 0;}
             }
@@ -198,22 +216,30 @@ main {
         .page_btn {/* 페이지버튼 */
             @include flex;
             justify-content: center;
-            width: max-content;
+            width: max-content; height: 15px;
             position: relative;
             margin: 0 auto;
             .pause {
-                width: max-content;
-                margin-right: 30px;
-                img {}
+                margin-right: 50px; height: 13px;
+                button {
+                    background-color: $bg1;
+                    background-image: url(../images/btn_pause.png);
+                    background-position: center; background-repeat: no-repeat;
+                    width: 11px; height: 13px;
+                    border: 0;
+                }
+                .play {
+                    background-image: url(../images/btn_play.png);
+                }
             }
             .pause::after {/* 구분선 */
                 content: ''; display: inline-block;
                 width: 1px; height: 12px;
                 background-color: $color1;
-                margin: 0 15px;
+                margin: 0 25px 0 13px;
             }
             .swiper-pagination {
-                width: max-content; height: 15px;
+                width: max-content; 
                 top: 0; left: 38px;
                 .swiper-pagination-bullet {
                     background-color: $bg2;
@@ -306,7 +332,8 @@ main {
                                 width: 118px; line-height: 28px;
                                 background-color: $bg2; 
                                 border: 1px solid $color7; border-left: 0; border-right: 0;
-                                margin-bottom: 2px;
+                                margin-bottom: 2px; text-align: center;
+                                appearance: none;
                             }
                             #plus {}
                         }
@@ -337,40 +364,51 @@ main {
         padding: $p55;
         h2 {@include title;}
         .new_slide {
-            margin: $m35;
             .swiper-wrapper {
                 @include flex;
+                margin: $m35;
                 .swiper-slide {
                     height: 580px;
-                    p:first-child {
-                        margin-bottom: 25px;
-                        img{}
-                    }
-                    p:last-child {
-                        padding: 0 40px; height: 90px; color: $color2;
-                        font-family: archer, nanum; font-size: $font18;
+                    a {
+                        p:first-child {
+                            margin-bottom: 25px;
+                            img {transition: all 0.5s ease;}
+                            img:hover {opacity: 0.8;}
+                        }
+                        p:last-child {
+                            padding: 0 40px; height: 90px; color: $color2;
+                            font-family: archer, nanum; font-size: $font18;
+                        }
                     }
                 }
             }
-            .page_btn {/* 페이지 버튼 */
+            .page_btn {/* 페이지버튼 */
                 @include flex;
                 justify-content: center;
-                width: max-content;
+                width: max-content; height: 15px;
                 position: relative;
                 margin: 0 auto;
                 .pause {
-                    width: max-content;
-                    margin-right: 30px;
-                    img {}
+                    margin-right: 50px; height: 13px;
+                    button {
+                        background-image: url(../images/btn_pause.png);
+                        background-position: center; background-repeat: no-repeat;
+                        width: 11px; height: 13px;
+                        border: 0;
+                        background-color: $bg1;
+                    }
+                    .play {
+                        background-image: url(../images/btn_play.png)!important;
+                    }
                 }
                 .pause::after {/* 구분선 */
                     content: ''; display: inline-block;
                     width: 1px; height: 12px;
                     background-color: $color1;
-                    margin: 0 15px;
+                    margin: 0 25px 0 13px;
                 }
                 .swiper-pagination {
-                    width: max-content; height: 15px;
+                    width: max-content; 
                     top: 0; left: 38px;
                     .swiper-pagination-bullet {
                         background-color: $bg2;
@@ -395,9 +433,14 @@ main {
             @include center;
             @include flex; 
             justify-content: center; flex-flow: row wrap;
-            a {width: 200px; height: 200px;
-                img {width: 100%;}
+            a {
+                width: 200px; height: 200px; overflow: hidden;
+                img {
+                    width: 100%; 
+                    transition: all 0.5s ease;
+                }
             }
+            a:hover img {transform: scale(1.1); opacity: 0.8;}
         }
         p {
             #insta {
@@ -434,7 +477,7 @@ footer {
             }
             dd::after {
                 @include page_line; height: 10px; 
-                background-color: #4b2616;
+                background-color: $color7;
                 margin: 0 30px;
             }
             dd:last-child::after {display: none;}

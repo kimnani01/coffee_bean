@@ -1,13 +1,14 @@
 @charset "UTF-8";
 .top_btn {
   position: fixed;
-  z-index: 999;
+  z-index: 990;
   right: 30px;
   bottom: 80px;
+  display: none;
 }
 header {
   position: fixed;
-  z-index: 999;
+  z-index: 990;
   left: 0;
   top: 0;
   width: 100%;
@@ -69,6 +70,8 @@ header .inner_header_bg .inner_header nav .gnb > li > a {
   letter-spacing: 0.4px;
   font-weight: 700;
   margin-right: 60px;
+  transition: all 0.2s ease;
+  line-height: 100px;
 }
 header .inner_header_bg .inner_header nav .gnb > li .bg { /* 마우스 올렸을 때 나타나는 메뉴 */
   background-color: #EEEEEE;
@@ -84,6 +87,7 @@ header .inner_header_bg .inner_header nav .gnb > li .bg { /* 마우스 올렸을
   justify-content: center;
   align-items: start;
   display: none;
+  transition: opacity 0.3s ease;
 }
 header .inner_header_bg .inner_header nav .gnb > li .bg .title {
   width: 250px;
@@ -91,6 +95,7 @@ header .inner_header_bg .inner_header nav .gnb > li .bg .title {
 header .inner_header_bg .inner_header nav .gnb > li .bg .title p {
   font-weight: 700;
   font-size: 1.25rem;
+  color: #CF661A;
 }
 header .inner_header_bg .inner_header nav .gnb > li .bg .sub {
   display: grid;
@@ -105,6 +110,7 @@ header .inner_header_bg .inner_header nav .gnb > li .bg .sub > li a {
   font-family: nanum;
   font-weight: 700;
   font-size: 0.938rem;
+  color: #4b2616;
 }
 header .inner_header_bg .inner_header nav .gnb > li .bg .sub > li .depth1 {
   margin-top: 20px;
@@ -116,6 +122,7 @@ header .inner_header_bg .inner_header nav .gnb > li .bg .sub > li .depth1 li a {
   font-family: nanum;
   font-size: 0.813rem;
   font-weight: 400;
+  color: #604f48;
 }
 header .inner_header_bg .inner_header nav .gnb > li:last-child p {
   margin-bottom: 20px;
@@ -123,9 +130,23 @@ header .inner_header_bg .inner_header nav .gnb > li:last-child p {
 header .inner_header_bg .inner_header nav .gnb > li:last-child > a {
   margin: 0;
 }
-header .inner_header_bg .inner_header .search_wrap > button {
+header .inner_header_bg .inner_header nav .gnb > li:hover > a {
+  color: #CF661A;
+}
+header .inner_header_bg .inner_header .search_wrap #search_btn {
   background: none;
   border: 0;
+  background-image: url(../images/icon_search.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+header .inner_header_bg .inner_header .search_wrap .search_on { /* 검색버튼 눌렀을 때 창닫기 버튼*/
+  background-image: url(../images/icon_search_close.png) !important;
+}
+header .inner_header_bg .inner_header .search_wrap .search_display { /* 검색버튼 눌렀을 때 검색창 나오기 */
+  display: flex !important;
 }
 header .inner_header_bg .inner_header .search_wrap .bg { /* 검색버튼 눌렀을 때 나오는 검색바 */
   position: absolute;
@@ -149,8 +170,9 @@ header .inner_header_bg .inner_header .search_wrap .bg input {
   width: 1160px;
   margin-right: 20px;
   line-height: 30px;
+  font-family: nanum;
 }
-header .inner_header_bg .inner_header .search_wrap .bg button {
+header .inner_header_bg .inner_header .search_wrap .bg #in_search_btn {
   background: none;
   border: 0;
 }
@@ -224,14 +246,51 @@ main .pick_wrap .pick .swiper-wrapper {
   align-items: center;
   margin: 35px 0;
 }
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo {
-  margin-bottom: 25px;
+main .pick_wrap .pick .swiper-wrapper .swiper-slide {
   position: relative;
 }
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo img {
-  width: 100%;
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .photo {
+  margin-bottom: 25px;
 }
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo .quickview { /* 팝업시작 버튼 */
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .photo img {
+  width: 100%;
+  transition: all 0.5s ease;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .photo img:hover {
+  opacity: 0.8;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .txt_box {
+  height: 150px;
+  color: #333333;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .txt_box .name {
+  font-family: archer_b, nanum;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .txt_box .date {
+  font-family: Arial, nanum;
+  font-size: 0.875rem;
+  margin: 15px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .txt_box .cost {
+  font-family: nanum;
+  font-size: 0.813rem;
+  margin-bottom: 5px;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .txt_box .total_price {
+  font-family: nanum;
+  font-size: 0.875rem;
+  color: #CF661A;
+}
+main .pick_wrap .pick .swiper-wrapper .swiper-slide .quickview { /* 팝업시작 버튼 */
   position: absolute;
   top: 100px;
   left: 0;
@@ -248,37 +307,6 @@ main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo .quickview { /* 팝�
   letter-spacing: 0.8px;
   display: none;
 }
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box {
-  height: 150px;
-  color: #333333;
-}
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box .name {
-  font-family: archer_b, nanum;
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 22px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box .date {
-  font-family: Arial, nanum;
-  font-size: 0.875rem;
-  margin: 15px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box .cost {
-  font-family: nanum;
-  font-size: 0.813rem;
-  margin-bottom: 5px;
-}
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box .total_price {
-  font-family: nanum;
-  font-size: 0.875rem;
-  color: #CF661A;
-}
 main .pick_wrap .pick .swiper-wrapper .swiper-slide:last-child {
   margin: 0;
 }
@@ -290,13 +318,25 @@ main .pick_wrap .page_btn { /* 페이지버튼 */
   justify-content: center;
   width: -moz-max-content;
   width: max-content;
+  height: 15px;
   position: relative;
   margin: 0 auto;
 }
 main .pick_wrap .page_btn .pause {
-  width: -moz-max-content;
-  width: max-content;
-  margin-right: 30px;
+  margin-right: 50px;
+  height: 13px;
+}
+main .pick_wrap .page_btn .pause button {
+  background-color: #fff;
+  background-image: url(../images/btn_pause.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 13px;
+  border: 0;
+}
+main .pick_wrap .page_btn .pause .play {
+  background-image: url(../images/btn_play.png);
 }
 main .pick_wrap .page_btn .pause::after { /* 구분선 */
   content: "";
@@ -304,12 +344,11 @@ main .pick_wrap .page_btn .pause::after { /* 구분선 */
   width: 1px;
   height: 12px;
   background-color: #E4E4E4;
-  margin: 0 15px;
+  margin: 0 25px 0 13px;
 }
 main .pick_wrap .page_btn .swiper-pagination {
   width: -moz-max-content;
   width: max-content;
-  height: 15px;
   top: 0;
   left: 38px;
 }
@@ -454,6 +493,10 @@ main .popup_bg .popup .info .btm dl:last-of-type dd #count {
   border-left: 0;
   border-right: 0;
   margin-bottom: 2px;
+  text-align: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 main .popup_bg .popup .info .btm .btn {
   display: flex;
@@ -497,29 +540,33 @@ main .new_wrap h2 {
   font-size: 1.5rem;
   color: #CF661A;
 }
-main .new_wrap .new_slide {
-  margin: 35px 0;
-}
 main .new_wrap .new_slide .swiper-wrapper {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  margin: 35px 0;
 }
 main .new_wrap .new_slide .swiper-wrapper .swiper-slide {
   height: 580px;
 }
-main .new_wrap .new_slide .swiper-wrapper .swiper-slide p:first-child {
+main .new_wrap .new_slide .swiper-wrapper .swiper-slide a p:first-child {
   margin-bottom: 25px;
 }
-main .new_wrap .new_slide .swiper-wrapper .swiper-slide p:last-child {
+main .new_wrap .new_slide .swiper-wrapper .swiper-slide a p:first-child img {
+  transition: all 0.5s ease;
+}
+main .new_wrap .new_slide .swiper-wrapper .swiper-slide a p:first-child img:hover {
+  opacity: 0.8;
+}
+main .new_wrap .new_slide .swiper-wrapper .swiper-slide a p:last-child {
   padding: 0 40px;
   height: 90px;
   color: #CF661A;
   font-family: archer, nanum;
   font-size: 1.125rem;
 }
-main .new_wrap .new_slide .page_btn { /* 페이지 버튼 */
+main .new_wrap .new_slide .page_btn { /* 페이지버튼 */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -527,13 +574,25 @@ main .new_wrap .new_slide .page_btn { /* 페이지 버튼 */
   justify-content: center;
   width: -moz-max-content;
   width: max-content;
+  height: 15px;
   position: relative;
   margin: 0 auto;
 }
 main .new_wrap .new_slide .page_btn .pause {
-  width: -moz-max-content;
-  width: max-content;
-  margin-right: 30px;
+  margin-right: 50px;
+  height: 13px;
+}
+main .new_wrap .new_slide .page_btn .pause button {
+  background-image: url(../images/btn_pause.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 13px;
+  border: 0;
+  background-color: #fff;
+}
+main .new_wrap .new_slide .page_btn .pause .play {
+  background-image: url(../images/btn_play.png) !important;
 }
 main .new_wrap .new_slide .page_btn .pause::after { /* 구분선 */
   content: "";
@@ -541,12 +600,11 @@ main .new_wrap .new_slide .page_btn .pause::after { /* 구분선 */
   width: 1px;
   height: 12px;
   background-color: #E4E4E4;
-  margin: 0 15px;
+  margin: 0 25px 0 13px;
 }
 main .new_wrap .new_slide .page_btn .swiper-pagination {
   width: -moz-max-content;
   width: max-content;
-  height: 15px;
   top: 0;
   left: 38px;
 }
@@ -584,9 +642,15 @@ main .insta_wrap .thumbnail {
 main .insta_wrap .thumbnail a {
   width: 200px;
   height: 200px;
+  overflow: hidden;
 }
 main .insta_wrap .thumbnail a img {
   width: 100%;
+  transition: all 0.5s ease;
+}
+main .insta_wrap .thumbnail a:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 main .insta_wrap p #insta {
   color: #fff;
@@ -639,7 +703,7 @@ footer .menu dl dd::after {
   background-color: #E4E4E4;
   margin: 0 15px;
   height: 10px;
-  background-color: #4b2616;
+  background-color: #ccc;
   margin: 0 30px;
 }
 footer .menu dl dd:last-child::after {
