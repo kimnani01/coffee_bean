@@ -350,50 +350,49 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
-            <!-- 팝업 페이지 -->
-            <div class="popup_bg">
-                <div class="bg">
-                    <div class="popup">
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide slide1"><span>상세이미지1</span></div>
-                                <div class="swiper-slide slide2"><span>상세이미지2</span></div>
-                            </div>
-                            <div class="swiper-button-prev"><img src="./images/btn_prev.png" alt="이전"></div>
-                            <div class="swiper-button-next"><img src="./images/btn_next.png" alt="다음"></div>
+        </div>
+        <!-- 팝업 페이지 -->
+        <div class="popup_bg">
+            <div class="popup">
+                <div class="swiper item_popup">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide1"><span>상세이미지1</span></div>
+                        <div class="swiper-slide slide2"><span>상세이미지2</span></div>
+                        <div class="swiper-slide slide3"><span>상세이미지3</span></div>
+                    </div>
+                    <div class="swiper-button-prev"><img src="./images/btn_prev.png" alt="이전"></div>
+                    <div class="swiper-button-next"><img src="./images/btn_next.png" alt="다음"></div>
+                </div>
+                <div class="info">
+                    <div class="top">
+                        <h2>(58%할인)헤이즐넛라떼 컵커피 300ml 10입(박스)</h2>
+                        <p class="date">유통기한 상온 2024-07-10까지/(총 유통기한 제조일로부터 3개월)</p>
+                        <p class="price"><del>21,000원</del><em>8,900원</em></p>
+                    </div>
+                    <div class="btm">
+                        <dl>
+                            <dt>용량</dt>
+                            <dd>300ml*10개입</dd>
+                        </dl>
+                        <dl>
+                            <dt>배송비</dt>
+                            <dd>3,000원(30,000원 이상 주문시 무료)</dd>
+                        </dl>
+                        <dl>
+                            <dt>주문수량</dt>
+                            <dd>
+                                <button type="button" id="minus"><img src="./images/btn_minus.gif" alt="수량빼기"></button>
+                                <input type="num" name="count" id="count">
+                                <button type="button" id="plus"><img src="./images/btn_plus.gif" alt="수량 추가"></button>
+                            </dd>
+                        </dl>
+                        <div class="btn">
+                            <button type="button" id="cart_btn">ADD TO CART</button>
+                            <button type="button" id="buy_btn">BUY NOW</button>
                         </div>
-                        <div class="info">
-                            <div class="top">
-                                <h2>(58%할인)헤이즐넛라떼 컵커피 300ml 10입(박스)</h2>
-                                <p>유통기한 상온 2024-07-10까지/(총 유통기한 제조일로부터 3개월)</p>
-                                <p><del>21,000원</del><em>8,900원</em></p>
-                            </div>
-                            <div class="btm">
-                                <dl>
-                                    <dt>용량</dt>
-                                    <dd>300ml*10개입</dd>
-                                </dl>
-                                <dl>
-                                    <dt>배송비</dt>
-                                    <dd>3,000원(30,000원 이상 주문시 무료)</dd>
-                                </dl>
-                                <dl>
-                                    <dt>주문수량</dt>
-                                    <dd>
-                                        <button type="button" id="plus">+</button>
-                                        <input type="num" name="count" id="count">
-                                        <button type="button" id="minus">-</button>
-                                    </dd>
-                                </dl>
-                                <div class="btn">
-                                    <button type="button" id="cart_btn">ADD TO CART</button>
-                                    <button type="button" id="buy_btn">BUY NOW</button>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" id="popup_close"><img src="./images/btn_close_001.png" alt="닫기"></button>
                     </div>
                 </div>
+                <button type="button" id="popup_close"><img src="./images/btn_close_001.png" alt="닫기"></button>
             </div>
         </div>
         <!-- What's new -->

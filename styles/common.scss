@@ -1,17 +1,20 @@
 $font13: 0.813rem;
 $font14: 0.875rem;
 $font18: 1.125rem;
+$font24: 1.5rem;
 $bg1: #fff;
 $bg2: #EEEEEE;
 $bg3: #F38200;
 $bg4: #7C51A1;
 $bg5: #e2e2e2;
+$bg6: #CF661A;
 $color1: #E4E4E4;
 $color2: #CF661A;
 $color3: #fff;
 $color4: #4b2616;
 $color5: #5f4d3f;
 $color6: #333333;
+$color7: #ccc;
 $p55: 55px 0;
 $m35: 35px 0;
 @mixin pst_fixed {
@@ -32,8 +35,8 @@ $m35: 35px 0;
     width: 1200px; margin: 0 auto;
 }
 @mixin title {
-    font-family: archer; font-size: 1.5rem;
-    color: $color2;
+    font-family: archer, nanum; font-size: 1.5rem;
+    color: $color2; 
 }
 @mixin dot {
     overflow: hidden;

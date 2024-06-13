@@ -213,7 +213,7 @@ main .pick_wrap { /* MD pick */
   padding: 55px 0;
 }
 main .pick_wrap h2 {
-  font-family: archer;
+  font-family: archer, nanum;
   font-size: 1.5rem;
   color: #CF661A;
 }
@@ -226,11 +226,26 @@ main .pick_wrap .pick .swiper-wrapper {
 }
 main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo {
   margin-bottom: 25px;
+  position: relative;
 }
 main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo img {
   width: 100%;
 }
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo .quickview {
+main .pick_wrap .pick .swiper-wrapper .swiper-slide .photo .quickview { /* 팝업시작 버튼 */
+  position: absolute;
+  top: 100px;
+  left: 0;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 40px;
+  background-color: #F38200;
+  color: #fff;
+  border: 0;
+  font-family: archer_b;
+  font-size: 0.875rem;
+  letter-spacing: 0.8px;
   display: none;
 }
 main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box {
@@ -238,8 +253,9 @@ main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box {
   color: #333333;
 }
 main .pick_wrap .pick .swiper-wrapper .swiper-slide .txt_box .name {
-  font-family: archer, nanum;
+  font-family: archer_b, nanum;
   font-size: 1.125rem;
+  font-weight: 700;
   line-height: 22px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -286,7 +302,7 @@ main .pick_wrap .page_btn .pause::after { /* 구분선 */
   content: "";
   display: inline-block;
   width: 1px;
-  height: 13px;
+  height: 12px;
   background-color: #E4E4E4;
   margin: 0 15px;
 }
@@ -306,8 +322,169 @@ main .pick_wrap .page_btn .swiper-pagination .swiper-pagination-bullet {
 main .pick_wrap .page_btn .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #F38200;
 }
-main .pick_wrap .popup_bg { /* 팝업페이지 */
+main .popup_bg { /* 팝업페이지 */
   display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 138px;
+  z-index: 999;
+}
+main .popup_bg .popup {
+  background-color: #fff;
+  width: 1080px;
+  height: 600px;
+  padding: 60px 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: calc((100vh - 138px) / 2);
+  transform: translate(-50%, -50%);
+}
+main .popup_bg .popup .item_popup {
+  width: 480px;
+  height: 480px;
+  position: relative;
+  margin: 0;
+}
+main .popup_bg .popup .item_popup .swiper-wrapper .swiper-slide {
+  width: 100%;
+  background-position: center;
+}
+main .popup_bg .popup .item_popup .swiper-wrapper .swiper-slide span {
+  display: none;
+}
+main .popup_bg .popup .item_popup .swiper-wrapper .slide1 {
+  background-image: url(../images/popup_001.jpg);
+}
+main .popup_bg .popup .item_popup .swiper-wrapper .slide2 {
+  background-image: url(../images/popup_002.jpg);
+}
+main .popup_bg .popup .item_popup .swiper-wrapper .slide3 {
+  background-image: url(../images/popup_003.jpg);
+}
+main .popup_bg .popup .item_popup .swiper-button-prev {
+  position: absolute;
+  left: 11px;
+}
+main .popup_bg .popup .item_popup .swiper-button-prev::after {
+  display: none;
+}
+main .popup_bg .popup .item_popup .swiper-button-next {
+  position: absolute;
+  right: 12px;
+}
+main .popup_bg .popup .item_popup .swiper-button-next::after {
+  display: none;
+}
+main .popup_bg .popup .info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: column nowrap;
+  align-items: start;
+  width: 480px;
+  height: 480px;
+  text-align: start;
+}
+main .popup_bg .popup .info .top h2 {
+  font-size: 1.5rem;
+  font-family: archer, nanum;
+  font-weight: 700;
+  color: #000;
+  line-height: 1.4;
+}
+main .popup_bg .popup .info .top .date {
+  font-family: nanum;
+  font-size: 0.875rem;
+  margin: 10px 0;
+}
+main .popup_bg .popup .info .top .price {
+  font-family: nanum;
+}
+main .popup_bg .popup .info .top .price em {
+  margin-left: 12px;
+  color: #CF661A;
+}
+main .popup_bg .popup .info .btm dl {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: start;
+}
+main .popup_bg .popup .info .btm dl dt {
+  width: 73px;
+  font-family: nanum;
+  font-size: 0.813rem;
+}
+main .popup_bg .popup .info .btm dl dd {
+  font-family: nanum;
+  font-size: 0.813rem;
+}
+main .popup_bg .popup .info .btm dl:nth-child(2) {
+  margin: 10px 0;
+}
+main .popup_bg .popup .info .btm dl:last-of-type dd {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 31px;
+}
+main .popup_bg .popup .info .btm dl:last-of-type dd button {
+  background: none;
+  border: 0;
+}
+main .popup_bg .popup .info .btm dl:last-of-type dd #count {
+  font-family: nanum;
+  font-size: 0.813rem;
+  width: 118px;
+  line-height: 28px;
+  background-color: #EEEEEE;
+  border: 1px solid #ccc;
+  border-left: 0;
+  border-right: 0;
+  margin-bottom: 2px;
+}
+main .popup_bg .popup .info .btm .btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 480px;
+}
+main .popup_bg .popup .info .btm .btn button {
+  width: 235px;
+  height: 45px;
+  font-family: archer;
+  font-size: 0.875rem;
+  letter-spacing: 0.8px;
+  border: 0;
+  color: #fff;
+  margin-top: 20px;
+}
+main .popup_bg .popup .info .btm .btn #cart_btn {
+  background-color: #F38200;
+}
+main .popup_bg .popup .info .btm .btn #buy_btn {
+  background-color: #CF661A;
+}
+main .popup_bg .popup #popup_close {
+  background: 0;
+  border: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
 }
 main .new_wrap { /* 신상 */
   width: 1200px;
@@ -316,7 +493,7 @@ main .new_wrap { /* 신상 */
   padding: 55px 0;
 }
 main .new_wrap h2 {
-  font-family: archer;
+  font-family: archer, nanum;
   font-size: 1.5rem;
   color: #CF661A;
 }
@@ -362,7 +539,7 @@ main .new_wrap .new_slide .page_btn .pause::after { /* 구분선 */
   content: "";
   display: inline-block;
   width: 1px;
-  height: 13px;
+  height: 12px;
   background-color: #E4E4E4;
   margin: 0 15px;
 }
@@ -388,7 +565,7 @@ main .insta_wrap {
   padding: 55px 0;
 }
 main .insta_wrap h2 {
-  font-family: archer;
+  font-family: archer, nanum;
   font-size: 1.5rem;
   color: #CF661A;
   color: #fff;

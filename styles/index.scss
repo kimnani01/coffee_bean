@@ -157,14 +157,24 @@ main {
                 .swiper-slide {
                     .photo {
                         margin-bottom: 25px;
+                        position: relative;
                         img {width: 100%;}
-                        .quickview {display: none;}
+                        .quickview {/* 팝업시작 버튼 */
+                            @include pst_ab; top: 200px; left: 50%;
+                            transform: translateX(-50%);
+                            width: 200px; height: 40px;
+                            background-color: $bg3; color: $color3;
+                            border: 0; font-family: archer_b; font-size: $font14;
+                            letter-spacing: 0.8px;
+                            display: none;
+                        }
                     }
                     .txt_box {
                         height: 150px;
                         color: $color6; 
                         .name {
-                            font-family: archer, nanum; font-size: $font18;
+                            font-family: archer_b, nanum; font-size: $font18;
+                            font-weight: 700;
                             line-height: 22px; @include dot;
                             
                         }
@@ -198,7 +208,7 @@ main {
             }
             .pause::after {/* 구분선 */
                 content: ''; display: inline-block;
-                width: 1px; height: 13px;
+                width: 1px; height: 12px;
                 background-color: $color1;
                 margin: 0 15px;
             }
@@ -213,8 +223,114 @@ main {
                 .swiper-pagination-bullet-active {background-color: $bg3;}
             }
         }
-        .popup_bg {/* 팝업페이지 */
-            display: none;}
+    }
+    .popup_bg {/* 팝업페이지 */
+        display: none;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        height: 100%; width: 100%;
+        position: fixed; left: 0; top: 138px; z-index: 999;
+        .popup {
+            background-color: $bg1;
+            width: 1080px; height: 600px;
+            padding: 60px 40px;
+            @include flex;
+            position: absolute; left: 50%; top: calc((100vh - 138px) / 2);
+            transform: translate(-50%, -50%);
+            .item_popup {
+                width: 480px; height: 480px;
+                position: relative;
+                margin: 0;
+                .swiper-wrapper {
+                    .swiper-slide {
+                        width: 100%; background-position: center;
+                        span {display: none;}
+                    }
+                    .slide1 {background-image: url(../images/popup_001.jpg);}
+                    .slide2 {background-image: url(../images/popup_002.jpg);}
+                    .slide3 {background-image: url(../images/popup_003.jpg);}
+                }
+                .swiper-button-prev {
+                    position: absolute; left: 11px;
+                    img{}
+                }
+                .swiper-button-prev::after {display: none}
+                .swiper-button-next {
+                    position: absolute; right: 12px;
+                    img{}
+                }
+                .swiper-button-next::after {display: none}
+            }
+            .info {
+                @include flex; flex-flow: column nowrap; align-items: start;
+                width: 480px; height: 480px; text-align: start;
+                .top {
+                    h2 {
+                        font-size: 1.5rem; font-family: archer, nanum; font-weight: 700;
+                        color: #000; line-height: 1.4;
+                    }
+                    .date {
+                        font-family: nanum; font-size: $font14;
+                        margin: 10px 0;
+                    }
+                    .price {
+                        font-family: nanum; 
+                        del{}
+                        em {margin-left: 12px; color: $color2;}
+                    }
+                }
+                .btm {
+                    dl {
+                        @include flex; justify-content: start;
+                        dt{
+                            width: 73px;
+                            font-family: nanum; font-size: $font13;
+                        }
+                        dd {
+                            font-family: nanum; font-size: $font13;
+                        }
+                    }
+                    dl:nth-child(2){
+                        margin: 10px 0;
+                    }
+                    dl:last-of-type {
+                        dd {
+                            @include flex; justify-content: center;
+                            width: 180px; height: 31px;
+                            button {
+                                background: none; border: 0;
+                                img {}
+                            }
+                            #minus {}
+                            #count {
+                                font-family: nanum; font-size: $font13;
+                                width: 118px; line-height: 28px;
+                                background-color: $bg2; 
+                                border: 1px solid $color7; border-left: 0; border-right: 0;
+                                margin-bottom: 2px;
+                            }
+                            #plus {}
+                        }
+                    }
+                    .btn {
+                        @include flex; width: 480px; 
+                        button {
+                            width: 235px; height: 45px;
+                            font-family: archer; font-size: $font14;
+                            letter-spacing: 0.8px;
+                            border: 0; color: $color3;
+                            margin-top: 20px;
+                        }
+                        #cart_btn {background-color: $bg3;}
+                        #buy_btn {background-color: $bg6;}
+                    }
+                }
+            }
+            #popup_close {
+                background: 0; border: 0;
+                position: absolute; top: 20px; right: 20px; z-index: 999;
+                img {}
+            }
+        }
     }
     .new_wrap {/* 신상 */
         @include center; text-align: center;
@@ -249,7 +365,7 @@ main {
                 }
                 .pause::after {/* 구분선 */
                     content: ''; display: inline-block;
-                    width: 1px; height: 13px;
+                    width: 1px; height: 12px;
                     background-color: $color1;
                     margin: 0 15px;
                 }

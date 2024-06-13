@@ -35,3 +35,13 @@ const new_slide = new Swiper('.new_slide', {
             clickable: true,
         }   
 })
+// 팝업 상세페이지
+const item_popup = new Swiper('.item_popup', {
+        autoplay:{delay:3000},
+        loop: true,
+        navigation:{
+            nextEl:'.item_popup .swiper-button-next',
+            prevEl:'.item_popup .swiper-button-prev',
+        }   
+    }
+)

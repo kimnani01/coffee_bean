@@ -17,6 +17,10 @@
     font-family: archer_b;
     src: url(../fonts/Archer-Bold-Pro.ttf);
 }
+@font-face {
+    font-family: archer_m;
+    src: url(../fonts/Archer-Medium-Pro.ttf);
+}
 
 * {box-sizing: border-box;}
 body,html,
