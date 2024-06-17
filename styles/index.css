@@ -18,7 +18,7 @@ header .lnb_bg {
   height: 38px;
 }
 header .lnb_bg .lnb {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -38,12 +38,15 @@ header .lnb_bg .lnb a:first-child {
 }
 header .lnb_bg .lnb a:first-child::after {
   content: "";
-  background-color: #E4E4E4;
+  background-color: #ccc;
   display: inline-block;
   width: 1px;
   height: 38px;
   position: absolute;
-  right: 357px;
+  right: 337px;
+}
+header .lnb_bg .lnb a:last-child {
+  margin: 0;
 }
 header .inner_header_bg {
   background-color: #fff;
@@ -51,7 +54,7 @@ header .inner_header_bg {
 }
 header .inner_header_bg .inner_header {
   height: 100px;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -164,7 +167,7 @@ header .inner_header_bg .inner_header .search_wrap .bg { /* 검색버튼 눌렀�
 }
 header .inner_header_bg .inner_header .search_wrap .bg input {
   border: 0;
-  border-bottom: 1px solid #E4E4E4;
+  border-bottom: 1px solid #ccc;
   background: none;
   text-align: center;
   width: 1160px;
@@ -229,7 +232,7 @@ main .banner a {
   justify-content: center;
 }
 main .pick_wrap { /* MD pick */
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   padding: 55px 0;
@@ -290,7 +293,7 @@ main .pick_wrap .pick .swiper-wrapper .swiper-slide a .txt_box .total_price {
   font-size: 0.875rem;
   color: #CF661A;
 }
-main .pick_wrap .pick .swiper-wrapper .swiper-slide .quickview { /* 팝업시작 버튼 */
+main .pick_wrap .pick .swiper-wrapper .swiper-slide a .quickview { /* 팝업시작 버튼 */
   position: absolute;
   top: 100px;
   left: 0;
@@ -310,7 +313,7 @@ main .pick_wrap .pick .swiper-wrapper .swiper-slide .quickview { /* 팝업시작
 main .pick_wrap .pick .swiper-wrapper .swiper-slide:last-child {
   margin: 0;
 }
-main .pick_wrap .page_btn { /* 페이지버튼 */
+main .pick_wrap .pick .page_btn { /* 페이지버튼 */
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -322,43 +325,54 @@ main .pick_wrap .page_btn { /* 페이지버튼 */
   position: relative;
   margin: 0 auto;
 }
-main .pick_wrap .page_btn .pause {
-  margin-right: 50px;
+main .pick_wrap .pick .page_btn .pause {
   height: 13px;
 }
-main .pick_wrap .page_btn .pause button {
-  background-color: #fff;
+main .pick_wrap .pick .page_btn .pause button {
   background-image: url(../images/btn_pause.png);
   background-position: center;
   background-repeat: no-repeat;
   width: 11px;
   height: 13px;
   border: 0;
+  background-color: #fff;
 }
-main .pick_wrap .page_btn .pause .play {
+main .pick_wrap .pick .page_btn .play {
+  height: 13px;
+  display: none;
+}
+main .pick_wrap .pick .page_btn .play button {
   background-image: url(../images/btn_play.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 13px;
+  border: 0;
+  background-color: #fff;
 }
-main .pick_wrap .page_btn .pause::after { /* 구분선 */
+main .pick_wrap .pick .page_btn .swiper-pagination::before { /* 구분선 */
   content: "";
   display: inline-block;
   width: 1px;
   height: 12px;
-  background-color: #E4E4E4;
-  margin: 0 25px 0 13px;
+  background-color: #ccc;
+  margin: 0 25px 0 25px;
 }
-main .pick_wrap .page_btn .swiper-pagination {
+main .pick_wrap .pick .page_btn .swiper-pagination {
   width: -moz-max-content;
   width: max-content;
+  height: -moz-max-content;
+  height: max-content;
   top: 0;
-  left: 38px;
+  left: 11px;
 }
-main .pick_wrap .page_btn .swiper-pagination .swiper-pagination-bullet {
+main .pick_wrap .pick .page_btn .swiper-pagination .swiper-pagination-bullet {
   background-color: #EEEEEE;
   opacity: 1;
   width: 15px;
   height: 15px;
 }
-main .pick_wrap .page_btn .swiper-pagination .swiper-pagination-bullet-active {
+main .pick_wrap .pick .page_btn .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #F38200;
 }
 main .popup_bg { /* 팝업페이지 */
@@ -530,7 +544,7 @@ main .popup_bg .popup #popup_close {
   z-index: 999;
 }
 main .new_wrap { /* 신상 */
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   text-align: center;
   padding: 55px 0;
@@ -579,7 +593,6 @@ main .new_wrap .new_slide .page_btn { /* 페이지버튼 */
   margin: 0 auto;
 }
 main .new_wrap .new_slide .page_btn .pause {
-  margin-right: 50px;
   height: 13px;
 }
 main .new_wrap .new_slide .page_btn .pause button {
@@ -591,22 +604,34 @@ main .new_wrap .new_slide .page_btn .pause button {
   border: 0;
   background-color: #fff;
 }
-main .new_wrap .new_slide .page_btn .pause .play {
-  background-image: url(../images/btn_play.png) !important;
+main .new_wrap .new_slide .page_btn .play {
+  height: 13px;
+  display: none;
 }
-main .new_wrap .new_slide .page_btn .pause::after { /* 구분선 */
+main .new_wrap .new_slide .page_btn .play button {
+  background-image: url(../images/btn_play.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 13px;
+  border: 0;
+  background-color: #fff;
+}
+main .new_wrap .new_slide .page_btn .swiper-pagination::before { /* 구분선 */
   content: "";
   display: inline-block;
   width: 1px;
   height: 12px;
-  background-color: #E4E4E4;
-  margin: 0 25px 0 13px;
+  background-color: #ccc;
+  margin: 0 25px 0 25px;
 }
 main .new_wrap .new_slide .page_btn .swiper-pagination {
   width: -moz-max-content;
   width: max-content;
+  height: -moz-max-content;
+  height: max-content;
   top: 0;
-  left: 38px;
+  left: 11px;
 }
 main .new_wrap .new_slide .page_btn .swiper-pagination .swiper-pagination-bullet {
   background-color: #EEEEEE;
@@ -617,7 +642,7 @@ main .new_wrap .new_slide .page_btn .swiper-pagination .swiper-pagination-bullet
 main .new_wrap .new_slide .page_btn .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #F38200;
 }
-main .insta_wrap {
+main .insta_wrap { /* 인스타그램 */
   background-color: #7C51A1;
   text-align: center;
   padding: 55px 0;
@@ -630,7 +655,7 @@ main .insta_wrap h2 {
 }
 main .insta_wrap .thumbnail {
   padding: 30px 0;
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -652,7 +677,7 @@ main .insta_wrap .thumbnail a:hover img {
   transform: scale(1.1);
   opacity: 0.8;
 }
-main .insta_wrap p #insta {
+main .insta_wrap #insta {
   color: #fff;
   background-color: #F38200;
   font-family: archer, nanum;
@@ -668,7 +693,7 @@ footer {
   padding: 55px 0;
 }
 footer .menu {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   margin-bottom: 55px;
 }
@@ -700,7 +725,7 @@ footer .menu dl dd::after {
   display: inline-block;
   width: 1px;
   height: 13px;
-  background-color: #E4E4E4;
+  background-color: #ccc;
   margin: 0 15px;
   height: 10px;
   background-color: #ccc;
@@ -713,7 +738,7 @@ footer .menu dl:last-child {
   margin: 0;
 }
 footer .inner_footer {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   padding-top: 30px;
   border-top: 1px solid #4b2616;
@@ -739,7 +764,7 @@ footer .inner_footer .left .law a::after {
   display: inline-block;
   width: 1px;
   height: 13px;
-  background-color: #E4E4E4;
+  background-color: #ccc;
   margin: 0 15px;
   height: 10px;
   background-color: #4b2616;
@@ -759,7 +784,7 @@ footer .inner_footer .left .address span::after {
   display: inline-block;
   width: 1px;
   height: 13px;
-  background-color: #E4E4E4;
+  background-color: #ccc;
   margin: 0 15px;
   height: 10px;
   background-color: #5f4d3f;

@@ -88,10 +88,10 @@ search_btn.addEventListener('click',()=>{
 const item_a = document.querySelectorAll('.pick .swiper-wrapper .swiper-slide a')
 for(let i of item_a){
     i.addEventListener('mouseover', ()=>{
-        i.nextElementSibling.style.display = 'block'
+        i.lastElementChild.style.display = 'block'
     })
     i.addEventListener('mouseout', ()=>{
-        i.nextElementSibling.style.display = 'none'
+        i.lastElementChild.style.display = 'none'
     })
 }
 //-------------------quickview 클릭시 팝업 보이기
@@ -99,7 +99,8 @@ const quickview = document.querySelectorAll('.quickview')
 const popup_bg = document.querySelector('.popup_bg')
 //console.log(quickview, popup_bg)
 for(let i of quickview){
-    i.addEventListener('click',()=>{
+    i.addEventListener('click',(e)=>{
+        e.preventDefault()
         popup_bg.style.display= 'block'
     })
 }
@@ -125,12 +126,35 @@ minus.addEventListener('click',()=>{
     count_input.value = count
 })
 //---------------------------------
-//-------------------------슬라이드 정지 버튼 클릭 시 버튼 이미지 바꾸기
-const pause = document.querySelectorAll('.pause button')
-for(let i of pause){
-    i.addEventListener('click', ()=>{
-        i.classList.toggle('play')
-        //버튼 클릭 시 슬라이드 정지
-
-    })
-}
+//-------------------------pick
+//-------------------------슬라이드 정지버튼 클릭 시 플레이버튼으로 변경
+const pause_pick = document.querySelector('.pick .page_btn .pause')
+const play_pick = document.querySelector('.pick .page_btn .play')
+pause_pick.firstElementChild.addEventListener('click', ()=>{
+    pause_pick.style.display = 'none'
+    //플레이버튼 보이기
+    play_pick.style.display = 'block'
+    //슬라이드 정지
+    pick.autoplay.stop()
+})
+play_pick.firstElementChild.addEventListener('click',()=>{
+    play_pick.style.display = 'none'
+    pause_pick.style.display = 'block'
+    pick.autoplay.start()
+})
+//-------------------------new
+//-------------------------슬라이드 정지버튼 클릭 시 플레이버튼으로 변경
+const pause_new = document.querySelector('.new_slide .page_btn .pause')
+const play_new = document.querySelector('.new_slide .page_btn .play')
+pause_new.firstElementChild.addEventListener('click', ()=>{
+    pause_new.style.display = 'none'
+    //플레이버튼 보이기
+    play_new.style.display = 'block'
+    //슬라이드 정지
+    new_slide.autoplay.stop()
+})
+play_new.firstElementChild.addEventListener('click',()=>{
+    play_new.style.display = 'none'
+    pause_new.style.display = 'block'
+    new_slide.autoplay.start()
+})

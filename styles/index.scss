@@ -20,8 +20,9 @@ header {
             a:first-child::after {
                 content:''; background-color: $color1; display: inline-block;
                 width: 1px; height: 38px;
-                position: absolute; right: 357px;
+                position: absolute; right: 337px;
             }
+            a:last-child {margin: 0;}
         }
     }
     .inner_header_bg {
@@ -198,55 +199,62 @@ main {
                                 color: $color2;
                             }
                         }
-                    }
-                    .quickview {/* 팝업시작 버튼 */
-                        @include pst_ab; top: 200px; left: 50%;
-                        transform: translateX(-50%);
-                        width: 200px; height: 40px;
-                        background-color: $bg3; color: $color3;
-                        border: 0; font-family: archer_b; font-size: $font14;
-                        letter-spacing: 0.8px;
-                        display: none;
+                        .quickview {/* 팝업시작 버튼 */
+                            @include pst_ab; top: 200px; left: 50%;
+                            transform: translateX(-50%);
+                            width: 200px; height: 40px;
+                            background-color: $bg3; color: $color3;
+                            border: 0; font-family: archer_b; font-size: $font14;
+                            letter-spacing: 0.8px;
+                            display: none;
+                        }
                     }
                     // a:hover + .quickview {display: block;}
                 }
                 .swiper-slide:last-child {margin: 0;}
             }
-        }
-        .page_btn {/* 페이지버튼 */
-            @include flex;
-            justify-content: center;
-            width: max-content; height: 15px;
-            position: relative;
-            margin: 0 auto;
-            .pause {
-                margin-right: 50px; height: 13px;
-                button {
-                    background-color: $bg1;
-                    background-image: url(../images/btn_pause.png);
-                    background-position: center; background-repeat: no-repeat;
-                    width: 11px; height: 13px;
-                    border: 0;
+            .page_btn {/* 페이지버튼 */
+                @include flex;
+                justify-content: center;
+                width: max-content; height: 15px;
+                position: relative;
+                margin: 0 auto;
+                .pause {
+                    height: 13px;
+                    button {
+                        background-image: url(../images/btn_pause.png);
+                        background-position: center; background-repeat: no-repeat;
+                        width: 11px; height: 13px;
+                        border: 0;
+                        background-color: $bg1;
+                    }
                 }
                 .play {
-                    background-image: url(../images/btn_play.png);
+                    height: 13px;  display: none; 
+                    button {
+                        background-image: url(../images/btn_play.png);
+                        background-position: center; background-repeat: no-repeat;
+                        width: 11px; height: 13px;
+                        border: 0;
+                        background-color: $bg1;
+                    }
                 }
-            }
-            .pause::after {/* 구분선 */
-                content: ''; display: inline-block;
-                width: 1px; height: 12px;
-                background-color: $color1;
-                margin: 0 25px 0 13px;
-            }
-            .swiper-pagination {
-                width: max-content; 
-                top: 0; left: 38px;
-                .swiper-pagination-bullet {
-                    background-color: $bg2;
-                    opacity: 1;
-                    width: 15px; height: 15px;
+                .swiper-pagination::before {/* 구분선 */
+                    content: ''; display: inline-block;
+                    width: 1px; height: 12px;
+                    background-color: $color1;
+                    margin: 0 25px 0 25px;
                 }
-                .swiper-pagination-bullet-active {background-color: $bg3;}
+                .swiper-pagination {
+                    width: max-content; height: max-content;
+                    top: 0; left: 11px; 
+                    .swiper-pagination-bullet {
+                        background-color: $bg2;
+                        opacity: 1;
+                        width: 15px; height: 15px;
+                    }
+                    .swiper-pagination-bullet-active {background-color: $bg3;}
+                }
             }
         }
     }
@@ -389,7 +397,7 @@ main {
                 position: relative;
                 margin: 0 auto;
                 .pause {
-                    margin-right: 50px; height: 13px;
+                    height: 13px;
                     button {
                         background-image: url(../images/btn_pause.png);
                         background-position: center; background-repeat: no-repeat;
@@ -397,19 +405,26 @@ main {
                         border: 0;
                         background-color: $bg1;
                     }
-                    .play {
-                        background-image: url(../images/btn_play.png)!important;
+                }
+                .play {
+                    height: 13px;  display: none;
+                    button {
+                        background-image: url(../images/btn_play.png);
+                        background-position: center; background-repeat: no-repeat;
+                        width: 11px; height: 13px;
+                        border: 0;
+                        background-color: $bg1;
                     }
                 }
-                .pause::after {/* 구분선 */
+                .swiper-pagination::before {/* 구분선 */
                     content: ''; display: inline-block;
                     width: 1px; height: 12px;
                     background-color: $color1;
-                    margin: 0 25px 0 13px;
+                    margin: 0 25px 0 25px;
                 }
                 .swiper-pagination {
-                    width: max-content; 
-                    top: 0; left: 38px;
+                    width: max-content; height: max-content;
+                    top: 0; left: 11px; 
                     .swiper-pagination-bullet {
                         background-color: $bg2;
                         opacity: 1;
@@ -420,7 +435,7 @@ main {
             }
         }
     }
-    .insta_wrap {
+    .insta_wrap {/* 인스타그램 */
         background-color: $bg4;
         text-align: center;
         padding: $p55;
@@ -442,14 +457,12 @@ main {
             }
             a:hover img {transform: scale(1.1); opacity: 0.8;}
         }
-        p {
-            #insta {
-                color: $color3;
-                background-color: $bg3;
-                font-family: archer, nanum; font-size: 0.875rem;
-                letter-spacing: 1px; display: inline-block;
-                width: 400px; line-height: 40px;
-            }
+        #insta {
+            color: $color3;
+            background-color: $bg3;
+            font-family: archer, nanum; font-size: 0.875rem;
+            letter-spacing: 1px; display: inline-block;
+            width: 400px; line-height: 40px;
         }
     }
 }

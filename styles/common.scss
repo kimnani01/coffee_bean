@@ -8,7 +8,7 @@ $bg3: #F38200;
 $bg4: #7C51A1;
 $bg5: #e2e2e2;
 $bg6: #CF661A;
-$color1: #E4E4E4;
+$color1: #ccc;
 $color2: #CF661A;
 $color3: #fff;
 $color4: #4b2616;
@@ -31,7 +31,7 @@ $m35: 35px 0;
     background: none; border: 0;
 }
 @mixin center {
-    width: 1200px; margin: 0 auto;
+    max-width: 1200px; margin: 0 auto;
 }
 @mixin title {
     font-family: archer, nanum; font-size: 1.5rem;
