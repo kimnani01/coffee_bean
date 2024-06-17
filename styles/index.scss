@@ -39,14 +39,27 @@ header {
                     span {display: none}
                 }
                 .m_nav_bg {
+                    width: 380px; height: 100vh;
+                    background-color: $bg2;
+                    position: fixed; top: 0;
                     .search_bg {
-                        input {}
+                        background-color: $bg4; 
+                        height: 60px; padding: $p20;
+                        @include flex;
+                        input {
+                            border: 0; background: 0; color: $color3;
+                        }
+                        input::placeholder {color: $color3;}
                         #in_search_btn {
+                            @include button;
                             img {}
                         }
                     }
                 }
                 .customer_service {
+                    background-color: $bg1; 
+                    height: 60px; padding: $p20;
+                    @include flex;
                     span {}
                     img {}
                 }
@@ -57,10 +70,14 @@ header {
                             img {}
                         }
                         .bg {
+                            display: none;
                             p {}
                             .sub {
                                 > li {
                                     a {}
+                                    .depth1 {
+                                        a {}
+                                    }
                                 }
                             }
                         }
@@ -130,7 +147,7 @@ header {
             }
             .search_wrap {
                 #search_btn {
-                    @include btn;
+                    @include button;
                     background-image: url(../images/icon_search.png);
                     width: 20px; height: 20px;
                 }
@@ -152,7 +169,10 @@ header {
                         width: 1160px; margin-right: 20px; line-height: 30px;
                         font-family: nanum;
                     }
-                    #in_search_btn {@include btn;}
+                    #in_search_btn {
+                        @include button;
+                        img {}
+                    }
                 }
             }
             .user_menu {
@@ -184,9 +204,10 @@ main {
             .swiper-wrapper {
                 .swiper-slide {
                     a {
-                        background-size: cover;
+                        background-size: contain;
                         background-position: center;
-                        height: 700px; display: block;
+                        background-repeat: no-repeat;
+                        height: 700px; display: block; width: 100%;
                         span {display: none;}
                     }
                 }
@@ -407,7 +428,7 @@ main {
                             font-family: archer; font-size: $font14;
                             letter-spacing: 0.8px;
                             @include button;
-                            margin-top: 20px;
+                            margin-top: 20px; color: $color3;
                         }
                         #cart_btn {background-color: $bg3;}
                         #buy_btn {background-color: $bg6;}

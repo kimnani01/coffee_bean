@@ -76,6 +76,51 @@ header .inner_header_bg .inner_header .m_nav #menu_btn {
 header .inner_header_bg .inner_header .m_nav #menu_btn span {
   display: none;
 }
+header .inner_header_bg .inner_header .m_nav .m_nav_bg {
+  width: 380px;
+  height: 100vh;
+  background-color: #EEEEEE;
+  position: fixed;
+  top: 0;
+}
+header .inner_header_bg .inner_header .m_nav .m_nav_bg .search_bg {
+  background-color: #7C51A1;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header .inner_header_bg .inner_header .m_nav .m_nav_bg .search_bg input {
+  border: 0;
+  background: 0;
+  color: #fff;
+}
+header .inner_header_bg .inner_header .m_nav .m_nav_bg .search_bg input::-moz-placeholder {
+  color: #fff;
+}
+header .inner_header_bg .inner_header .m_nav .m_nav_bg .search_bg input::placeholder {
+  color: #fff;
+}
+header .inner_header_bg .inner_header .m_nav .m_nav_bg .search_bg #in_search_btn {
+  border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+header .inner_header_bg .inner_header .m_nav .customer_service {
+  background-color: #fff;
+  height: 60px;
+  padding: 0 20px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+header .inner_header_bg .inner_header .m_nav .gnb > li .bg {
+  display: none;
+}
 header .inner_header_bg .inner_header h1 a {
   display: block;
 }
@@ -155,8 +200,10 @@ header .inner_header_bg .inner_header nav .gnb > li:hover > a {
   color: #CF661A;
 }
 header .inner_header_bg .inner_header .search_wrap #search_btn {
-  background: none;
   border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
   background-image: url(../images/icon_search.png);
   width: 20px;
   height: 20px;
@@ -192,8 +239,10 @@ header .inner_header_bg .inner_header .search_wrap .bg input {
   font-family: nanum;
 }
 header .inner_header_bg .inner_header .search_wrap .bg #in_search_btn {
-  background: none;
   border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 header .inner_header_bg .inner_header .user_menu {
   display: flex;
@@ -238,10 +287,12 @@ main .visual_wrap .visual {
   position: relative;
 }
 main .visual_wrap .visual .swiper-wrapper .swiper-slide a {
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   height: 700px;
   display: block;
+  width: 100%;
 }
 main .visual_wrap .visual .swiper-wrapper .swiper-slide a span {
   display: none;
@@ -581,6 +632,7 @@ main .popup_bg .popup .info .btm .btn button {
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 20px;
+  color: #fff;
 }
 main .popup_bg .popup .info .btm .btn #cart_btn {
   background-color: #F38200;
