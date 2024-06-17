@@ -61,6 +61,24 @@ header .inner_header_bg .inner_header {
   justify-content: space-between;
   align-items: center;
 }
+header .inner_header_bg .inner_header .m_nav {
+  display: none;
+}
+header .inner_header_bg .inner_header .m_nav #menu_btn {
+  background-image: url(../images/btn_menu.svg);
+  border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+}
+header .inner_header_bg .inner_header .m_nav #menu_btn span {
+  display: none;
+}
+header .inner_header_bg .inner_header h1 a {
+  display: block;
+}
 header .inner_header_bg .inner_header nav .gnb {
   display: flex;
   flex-flow: row nowrap;
@@ -140,8 +158,6 @@ header .inner_header_bg .inner_header .search_wrap #search_btn {
   background: none;
   border: 0;
   background-image: url(../images/icon_search.png);
-  background-repeat: no-repeat;
-  background-position: center;
   width: 20px;
   height: 20px;
 }
@@ -178,6 +194,39 @@ header .inner_header_bg .inner_header .search_wrap .bg input {
 header .inner_header_bg .inner_header .search_wrap .bg #in_search_btn {
   background: none;
   border: 0;
+}
+header .inner_header_bg .inner_header .user_menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+header .inner_header_bg .inner_header .user_menu .login #login_btn {
+  background-image: url(../images/icon_user_info_m.png);
+  background-size: 25px;
+  border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+}
+header .inner_header_bg .inner_header .user_menu .login #login_btn span {
+  display: none;
+}
+header .inner_header_bg .inner_header .user_menu .cart_btn {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+}
+header .inner_header_bg .inner_header .user_menu .cart_btn img {
+  width: 23px;
 }
 
 main {
@@ -330,12 +379,12 @@ main .pick_wrap .pick .page_btn .pause {
 }
 main .pick_wrap .pick .page_btn .pause button {
   background-image: url(../images/btn_pause.png);
-  background-position: center;
-  background-repeat: no-repeat;
   width: 11px;
   height: 13px;
   border: 0;
-  background-color: #fff;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main .pick_wrap .pick .page_btn .play {
   height: 13px;
@@ -343,12 +392,12 @@ main .pick_wrap .pick .page_btn .play {
 }
 main .pick_wrap .pick .page_btn .play button {
   background-image: url(../images/btn_play.png);
-  background-position: center;
-  background-repeat: no-repeat;
   width: 11px;
   height: 13px;
   border: 0;
-  background-color: #fff;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main .pick_wrap .pick .page_btn .swiper-pagination::before { /* 구분선 */
   content: "";
@@ -494,8 +543,10 @@ main .popup_bg .popup .info .btm dl:last-of-type dd {
   height: 31px;
 }
 main .popup_bg .popup .info .btm dl:last-of-type dd button {
-  background: none;
   border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main .popup_bg .popup .info .btm dl:last-of-type dd #count {
   font-family: nanum;
@@ -526,7 +577,9 @@ main .popup_bg .popup .info .btm .btn button {
   font-size: 0.875rem;
   letter-spacing: 0.8px;
   border: 0;
-  color: #fff;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
   margin-top: 20px;
 }
 main .popup_bg .popup .info .btm .btn #cart_btn {
@@ -536,8 +589,10 @@ main .popup_bg .popup .info .btm .btn #buy_btn {
   background-color: #CF661A;
 }
 main .popup_bg .popup #popup_close {
-  background: 0;
   border: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -597,12 +652,12 @@ main .new_wrap .new_slide .page_btn .pause {
 }
 main .new_wrap .new_slide .page_btn .pause button {
   background-image: url(../images/btn_pause.png);
-  background-position: center;
-  background-repeat: no-repeat;
   width: 11px;
   height: 13px;
   border: 0;
-  background-color: #fff;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main .new_wrap .new_slide .page_btn .play {
   height: 13px;
@@ -610,12 +665,12 @@ main .new_wrap .new_slide .page_btn .play {
 }
 main .new_wrap .new_slide .page_btn .play button {
   background-image: url(../images/btn_play.png);
-  background-position: center;
-  background-repeat: no-repeat;
   width: 11px;
   height: 13px;
   border: 0;
-  background-color: #fff;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 main .new_wrap .new_slide .page_btn .swiper-pagination::before { /* 구분선 */
   content: "";

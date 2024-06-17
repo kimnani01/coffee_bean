@@ -47,3 +47,7 @@ $m35: 35px 0;
     background-color: $color1;
     margin: 0 15px;
 }
+@mixin button {
+    border: 0; background-color: transparent;
+    background-position: center; background-repeat: no-repeat;
+}

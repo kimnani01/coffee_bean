@@ -30,7 +30,49 @@ header {
         .inner_header {
             height: 100px; @include center;
             @include flex;
-            h1 {a {img {}}}
+            .m_nav {
+                display: none;
+                #menu_btn {
+                    background-image: url(../images/btn_menu.svg);
+                    @include button;
+                    width: 60px; height: 60px; 
+                    span {display: none}
+                }
+                .m_nav_bg {
+                    .search_bg {
+                        input {}
+                        #in_search_btn {
+                            img {}
+                        }
+                    }
+                }
+                .customer_service {
+                    span {}
+                    img {}
+                }
+                .gnb {
+                    > li {
+                        a {
+                            span {}
+                            img {}
+                        }
+                        .bg {
+                            p {}
+                            .sub {
+                                > li {
+                                    a {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            h1 {
+                a {
+                display: block;
+                img {}
+                }
+            }
             nav{
                 .gnb {
                     @include flex;
@@ -90,8 +132,6 @@ header {
                 #search_btn {
                     @include btn;
                     background-image: url(../images/icon_search.png);
-                    background-repeat: no-repeat;
-                    background-position: center;
                     width: 20px; height: 20px;
                 }
                 .search_on {/* 검색버튼 눌렀을 때 창닫기 버튼*/
@@ -113,6 +153,24 @@ header {
                         font-family: nanum;
                     }
                     #in_search_btn {@include btn;}
+                }
+            }
+            .user_menu {
+                @include flex; justify-content: center;
+                display: none;
+                .login {
+                    #login_btn {
+                        background-image: url(../images/icon_user_info_m.png);
+                        background-size: 25px;
+                        @include button;
+                        width: 60px; height: 60px;
+                        span {display: none;}
+                    }
+                }
+                .cart_btn {
+                    width: 60px; height: 60px;
+                    @include flex; justify-content: center;
+                    img {width: 23px;}
                 }
             }
         }
@@ -223,20 +281,16 @@ main {
                     height: 13px;
                     button {
                         background-image: url(../images/btn_pause.png);
-                        background-position: center; background-repeat: no-repeat;
                         width: 11px; height: 13px;
-                        border: 0;
-                        background-color: $bg1;
+                        @include button;
                     }
                 }
                 .play {
                     height: 13px;  display: none; 
                     button {
                         background-image: url(../images/btn_play.png);
-                        background-position: center; background-repeat: no-repeat;
                         width: 11px; height: 13px;
-                        border: 0;
-                        background-color: $bg1;
+                        @include button;
                     }
                 }
                 .swiper-pagination::before {/* 구분선 */
@@ -331,7 +385,7 @@ main {
                             @include flex; justify-content: center;
                             width: 180px; height: 31px;
                             button {
-                                background: none; border: 0;
+                                @include button;
                                 img {}
                             }
                             #minus {}
@@ -352,7 +406,7 @@ main {
                             width: 235px; height: 45px;
                             font-family: archer; font-size: $font14;
                             letter-spacing: 0.8px;
-                            border: 0; color: $color3;
+                            @include button;
                             margin-top: 20px;
                         }
                         #cart_btn {background-color: $bg3;}
@@ -361,7 +415,7 @@ main {
                 }
             }
             #popup_close {
-                background: 0; border: 0;
+                @include button;
                 position: absolute; top: 20px; right: 20px; z-index: 999;
                 img {}
             }
@@ -400,20 +454,16 @@ main {
                     height: 13px;
                     button {
                         background-image: url(../images/btn_pause.png);
-                        background-position: center; background-repeat: no-repeat;
                         width: 11px; height: 13px;
-                        border: 0;
-                        background-color: $bg1;
+                        @include button;
                     }
                 }
                 .play {
                     height: 13px;  display: none;
                     button {
                         background-image: url(../images/btn_play.png);
-                        background-position: center; background-repeat: no-repeat;
                         width: 11px; height: 13px;
-                        border: 0;
-                        background-color: $bg1;
+                        @include button;
                     }
                 }
                 .swiper-pagination::before {/* 구분선 */

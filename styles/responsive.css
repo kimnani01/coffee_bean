@@ -1,0 +1,11 @@
+@media screen and (max-width: 1200px){
+    header .lnb_bg {display: none;}
+    header .inner_header_bg .inner_header {height: 60px;}
+    header .inner_header_bg .inner_header .m_nav {display: block;}
+    header .inner_header_bg .inner_header h1 {width: 40px; line-height: 60px;}
+    header .inner_header_bg .inner_header h1 a img {width: 100%;}
+    header .inner_header_bg .inner_header nav {display: none;}
+    header .inner_header_bg .inner_header .search_wrap {display: none;}
+    header .inner_header_bg .inner_header .user_menu {display: flex;}
+    main {margin-top: 60px;}
+}
