@@ -63,7 +63,7 @@ window.addEventListener('scroll', function(){
 //settimeout
 //--------------------------------
 //메뉴에 마우스오버 시 서브 메뉴 나타나기
-const gnb = document.querySelectorAll('.gnb > li')
+const gnb = document.querySelectorAll('nav .gnb > li')
 for(let i of gnb){
     i.addEventListener('mouseover',()=>{
         //console.log(i)
