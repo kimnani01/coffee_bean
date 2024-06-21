@@ -9,10 +9,22 @@ main .banner {
   background-image: url(../images/menu_banner.jpg);
   background-repeat: no-repeat;
   height: 460px;
+  padding: 180.5px 0;
+  text-align: center;
 }
 main .banner p {
   color: #fff;
+  margin-bottom: 10px;
 }
 main .banner h1 {
   color: #fff;
+  font-size: 3.125rem;
+  font-weight: 900;
+}
+main .container aside p {
+  font-size: 1.125rem;
+}
+main .container aside h1 {
+  font-size: 3.125rem;
+  font-weight: 600;
 }/*# sourceMappingURL=menu.css.map */
