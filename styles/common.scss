@@ -1,7 +1,9 @@
 $font13: 0.813rem;
 $font14: 0.875rem;
 $font18: 1.125rem;
+$font20: 1.25rem;
 $font24: 1.5rem;
+$font50: 3.125rem;
 $bg1: #fff;
 $bg2: #EEEEEE;
 $bg3: #F38200;
@@ -17,6 +19,7 @@ $color6: #333333;
 $color7: #ccc;
 $color8: #4b2616;
 $color9: #604f48;
+$color10 :#5e2d86;
 $p55: 55px 0;
 $m35: 35px 0;
 $p20: 0 20px;
@@ -48,4 +51,8 @@ $p20: 0 20px;
 @mixin button {
     border: 0; background-color: transparent;
     background-position: center; background-repeat: no-repeat;
+}
+@mixin top_btn {
+    position: fixed; z-index: 990; right: 30px; bottom: 80px; 
+    display: none; 
 }

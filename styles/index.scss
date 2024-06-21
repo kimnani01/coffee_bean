@@ -62,11 +62,24 @@ header {
                     @include flex;
                     span {}
                     img {}
+                    > .depth1 {
+                        display: none;
+                        li {
+                            a {}
+                        }
+                    }
                 }
                 .gnb {
                     > li {
+                        width: 380px;
                         a {
-                            span {}
+                            height: 60px; width: 100%;
+                            border-bottom: 1px solid $color7;
+                            @include flex; padding: $p20;
+                            span {
+                                font-size: $font14; font-family: Arial, nanum;
+                                letter-spacing: 0.4px; font-weight: 700;
+                            }
                             img {}
                         }
                         .bg {
@@ -204,7 +217,7 @@ main {
             .swiper-wrapper {
                 .swiper-slide {
                     a {
-                        background-size: contain;
+                        background-size: cover;
                         background-position: center;
                         background-repeat: no-repeat;
                         height: 700px; display: block; width: 100%;

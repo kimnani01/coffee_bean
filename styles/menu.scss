@@ -1,0 +1,42 @@
+@import 'common';
+.top_btn {
+    @include top_btn;
+    a{img {}}
+}
+// header
+//main
+main {
+    .banner {
+        background-image: url(../images/menu_banner.jpg);
+        background-repeat: no-repeat;
+        height: 460px;
+        p {color: $color3;}
+        h1 {color: $color3;}
+    }
+    .container {
+        aside {
+            p {}
+            h1 {}
+            .snb {
+                > li {
+                    a {}
+                    .depth1 {
+                        li {
+                            a {}
+                        }
+                    }
+                }
+            }
+        }
+        .contents_wrap {
+            .item {
+                a {
+                    .photo {}
+                    .ko_name {}
+                    .en_name {}
+                }
+            }
+            .more {}
+        }
+    }
+}
