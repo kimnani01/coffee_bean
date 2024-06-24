@@ -9,6 +9,7 @@ main {
     .banner {
         background-image: url(../images/menu_banner.jpg);
         background-repeat: no-repeat;
+        background-position: center;
         height: 460px; padding: 180.5px 0;
         text-align: center;
         p {
@@ -20,33 +21,80 @@ main {
         }
     }
     .container {
+        @include center; @include flex; align-items: start;
+        margin: 100px auto 0;
         aside {
             p {
-                font-size: $font18;
+                font-size: $font18; margin-bottom: 20px;
             }
             h1 {
                 font-size: $font50; font-weight: 600;
+                color: $color10;
             }
             .snb {
-                > li {
-                    a {}
+                margin-top: 50px;
+                > li:first-child {
+                    > a {
+                        border-bottom: 2px solid $color10;
+                    }
                     .depth1 {
-                        li {
-                            a {}
+                        li:first-child {
+                            a {
+                                color: $color10;
+                            }
                         }
                     }
                 }
+                > li {
+                    margin-bottom: 30px;
+                    > a {
+                        font-size: $font24; margin-bottom: 20px;
+                        border-bottom: 2px solid $color11;
+                        width: 145px; display: inline-block;
+                    }
+                    .depth1 {
+                        li {
+                            margin-bottom: 16px;
+                            a {
+                                span {font-size: $font10;}
+                            }
+                        }
+                        li:last-child {margin: 0;}
+                    }
+                }
+                > li:nth-child(2) {.depth1{display: none;}}
+                > li:nth-child(3) {.depth1{display: none;}}
+                > li:nth-child(4) {.depth1{display: none;}}
             }
         }
         .contents_wrap {
+            text-align: center;
             .item {
+                @include flex; flex-flow: row wrap;
+                width: 1230px;
                 a {
-                    .photo {}
-                    .ko_name {}
-                    .en_name {}
+                    width: calc((1230px - 60px) / 4);
+                    margin-bottom: 50px;
+                    .photo {
+                        width: 292.5px;
+                        img {width: 100%;}
+                    }
+                    .ko_name {
+                        @include dot; margin: 25px 0 10px;
+                        font-size: $font18; line-height: 21px
+                    }
+                    .en_name {
+                        @include dot; font-size: $font14;
+                        line-height: 16px;
+                    }
                 }
             }
-            .more {}
+            .more {
+                width: 200px; line-height: 40px; display: inline-block;
+                background-color: $color10; color: #fff;
+                text-align: center; margin-top: 50px;
+                letter-spacing: 0.8px;
+            }
         }
     }
 }

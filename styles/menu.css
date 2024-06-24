@@ -8,6 +8,7 @@
 main .banner {
   background-image: url(../images/menu_banner.jpg);
   background-repeat: no-repeat;
+  background-position: center;
   height: 460px;
   padding: 180.5px 0;
   text-align: center;
@@ -21,10 +22,105 @@ main .banner h1 {
   font-size: 3.125rem;
   font-weight: 900;
 }
+main .container {
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-items: start;
+  margin: 100px auto 0;
+}
 main .container aside p {
   font-size: 1.125rem;
+  margin-bottom: 20px;
 }
 main .container aside h1 {
   font-size: 3.125rem;
   font-weight: 600;
+  color: #5e2d86;
+}
+main .container aside .snb {
+  margin-top: 50px;
+}
+main .container aside .snb > li:first-child > a {
+  border-bottom: 2px solid #5e2d86;
+}
+main .container aside .snb > li:first-child .depth1 li:first-child a {
+  color: #5e2d86;
+}
+main .container aside .snb > li {
+  margin-bottom: 30px;
+}
+main .container aside .snb > li > a {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #d9d9d9;
+  width: 145px;
+  display: inline-block;
+}
+main .container aside .snb > li .depth1 li {
+  margin-bottom: 16px;
+}
+main .container aside .snb > li .depth1 li a span {
+  font-size: 0.625rem;
+}
+main .container aside .snb > li .depth1 li:last-child {
+  margin: 0;
+}
+main .container aside .snb > li:nth-child(2) .depth1 {
+  display: none;
+}
+main .container aside .snb > li:nth-child(3) .depth1 {
+  display: none;
+}
+main .container aside .snb > li:nth-child(4) .depth1 {
+  display: none;
+}
+main .container .contents_wrap {
+  text-align: center;
+}
+main .container .contents_wrap .item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+  width: 1230px;
+}
+main .container .contents_wrap .item a {
+  width: 292.5px;
+  margin-bottom: 50px;
+}
+main .container .contents_wrap .item a .photo {
+  width: 292.5px;
+}
+main .container .contents_wrap .item a .photo img {
+  width: 100%;
+}
+main .container .contents_wrap .item a .ko_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 25px 0 10px;
+  font-size: 1.125rem;
+  line-height: 21px;
+}
+main .container .contents_wrap .item a .en_name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.875rem;
+  line-height: 16px;
+}
+main .container .contents_wrap .more {
+  width: 200px;
+  line-height: 40px;
+  display: inline-block;
+  background-color: #5e2d86;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  letter-spacing: 0.8px;
 }/*# sourceMappingURL=menu.css.map */
