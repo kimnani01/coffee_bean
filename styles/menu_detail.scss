@@ -1,14 +1,17 @@
+@import 'common';
 main {
-    .location {
+    padding: 50px 0 100px;
+    @include center;
+    background-color: aqua;
+    .path {
         a {
             img {}
         }
-        span {
-            img {}
-        }
+        a::after {}
+        .current_page {}
     }
     .item_wrap {
-        p {
+        .photo {
             img {}
         }
         .item_info {
@@ -16,19 +19,19 @@ main {
                 .ko_name_heart {
                     h1 {}
                     p {
-                        .my_menu {}
+                        .registration_my_menu {}
                     }
                 }
                 .en_name {}
             }
-            > p {}
+            .detail {}
             .nutritional_info {
-                p {}
+                h2 {}
                 .table {
                     dt {}
                     dd {}
                 }
-                a {}
+                .registration_my_menu {}
             }
         }
     }

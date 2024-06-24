@@ -20,31 +20,27 @@
     <!-- top btn -->
     <!-- header -->
     <main>
-        <div class="location">
-            <a href="#"><img src="./images/icon_house.svg" alt="홈"></a>
-            <span><img src="./images/arrow.svg" alt=""></span>
-            <a href="#">메뉴</a>
-            <span><img src="./images/arrow.svg" alt=""></span>
-            <a href="#">음료</a>
-            <span><img src="./images/arrow.svg" alt=""></span>
-            <a href="#">신상음료</a>
-            <span><img src="./images/arrow.svg" alt=""></span>
-            <a href="#">바닐라빈 오트 블랙다이몬</a>
+        <div class="path">
+            <a href="./index.html"><img src="./images/icon_house.svg" alt="홈"></a>
+            <a href="./menu.html">메뉴</a>
+            <a href="./menu.html">음료</a>
+            <a href="./menu.html">신상음료</a>
+            <a href="#" class="current_page">바닐라빈 오트 블랙다이몬</a>
         </div>
-        <div class="item_iwrap">
-            <p><img src="./menu/vanilla_bean_oat_black_dimon.jpg" alt=""></p>
+        <div class="item_wrap">
+            <p class="photo"><img src="./menu/vanilla_bean_oat_black_dimon.jpg" alt=""></p>
             <div class="item_info">
                 <div class="item_title">
                     <div class="ko_name_heart">
                         <h1>바닐라빈 오트 블랙다이몬</h1>
-                        <p><button type="button" id="my_menu"><img src="./images/btn_heart.png" alt="나만의 메뉴 등록"></button></p>
+                        <p><button type="button" class="registration_my_menu"></p>
                     </div>
                     <p class="en_name">Vanilla Bean Oat Black Dimon</p>
                 </div>
-                <p>크리미하고 진한 오트음료와 프리미엄 바닐라빈 소스에<br>블랙다이몬의 깊은 에스프레소 풍미가 느껴지는 플랜트 베이스드 음료</p>
+                <p class="detail">크리미하고 진한 오트음료와 프리미엄 바닐라빈 소스에<br>블랙다이몬의 깊은 에스프레소 풍미가 느껴지는 플랜트 베이스드 음료</p>
                 <div class="nutritional_info">
-                    <p>제품 영양 정보</p>
-                    <dl>
+                    <h2>제품 영양 정보</h2>
+                    <dl class="table">
                         <dt>열량 (kcal)</dt>
                         <dd>225</dd>
                         <dt>포화지방 (g)</dt>
@@ -60,7 +56,7 @@
                         <dt>단백질 (g)</dt>
                         <dd>3</dd>
                     </dl>
-                    <a href="#">나만의 메뉴 등록하기</a>
+                    <button type="button" class="registration_my_menu">나만의 메뉴 등록하기</button>
                 </div>
             </div>
         </div>

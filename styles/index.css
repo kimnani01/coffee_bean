@@ -18,7 +18,7 @@ header .lnb_bg {
   height: 38px;
 }
 header .lnb_bg .lnb {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -54,7 +54,7 @@ header .inner_header_bg {
 }
 header .inner_header_bg .inner_header {
   height: 100px;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -354,7 +354,7 @@ main .banner a {
   justify-content: center;
 }
 main .pick_wrap { /* MD pick */
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   text-align: center;
   padding: 55px 0;
@@ -673,7 +673,7 @@ main .popup_bg .popup #popup_close {
   z-index: 999;
 }
 main .new_wrap { /* 신상 */
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   text-align: center;
   padding: 55px 0;
@@ -784,7 +784,7 @@ main .insta_wrap h2 {
 }
 main .insta_wrap .thumbnail {
   padding: 30px 0;
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-flow: row nowrap;
@@ -822,7 +822,7 @@ footer {
   padding: 55px 0;
 }
 footer .menu {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   margin-bottom: 55px;
 }
@@ -867,7 +867,7 @@ footer .menu dl:last-child {
   margin: 0;
 }
 footer .inner_footer {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding-top: 30px;
   border-top: 1px solid #4b2616;
