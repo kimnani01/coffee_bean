@@ -22,7 +22,7 @@ main {
     }
     .container {
         @include center; @include flex; align-items: start;
-        margin: 100px auto 0;
+        margin: 100px auto;
         aside {
             p {
                 font-size: $font18; margin-bottom: 20px;

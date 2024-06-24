@@ -26,6 +26,10 @@ $p55: 55px 0;
 $m35: 35px 0;
 $p20: 0 20px;
 $m100: 100px 0 0;
+// font-family: 'NanumBarunGothicUltraLight';
+// font-family: 'NanumBarunGothicLight';
+// font-family: 'NanumBarunGothic';
+// font-family: 'NanumBarunGothicBold';
 @mixin flex {
     display: flex; flex-flow: row nowrap;
     justify-content: space-between;

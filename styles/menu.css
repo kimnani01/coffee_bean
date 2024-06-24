@@ -30,7 +30,7 @@ main .container {
   justify-content: space-between;
   align-items: center;
   align-items: start;
-  margin: 100px auto 0;
+  margin: 100px auto;
 }
 main .container aside p {
   font-size: 1.125rem;

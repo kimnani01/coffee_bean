@@ -1,0 +1,35 @@
+main {
+    .location {
+        a {
+            img {}
+        }
+        span {
+            img {}
+        }
+    }
+    .item_wrap {
+        p {
+            img {}
+        }
+        .item_info {
+            .item_title {
+                .ko_name_heart {
+                    h1 {}
+                    p {
+                        .my_menu {}
+                    }
+                }
+                .en_name {}
+            }
+            > p {}
+            .nutritional_info {
+                p {}
+                .table {
+                    dt {}
+                    dd {}
+                }
+                a {}
+            }
+        }
+    }
+}
